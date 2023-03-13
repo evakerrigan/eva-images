@@ -3,6 +3,12 @@ import './Footer.scss';
 
 export class Footer extends React.Component {
   render() {
-    return <h1>Footer</h1>;
+    return (
+      <footer className="footer">
+        <div className="wrapper">
+          <h2>Footer</h2>
+        </div>
+      </footer>
+    );
   }
 }

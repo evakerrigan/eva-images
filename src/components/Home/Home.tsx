@@ -3,6 +3,10 @@ import './Home.scss';
 
 export class Home extends React.Component {
   render() {
-    return <h1>Home</h1>;
+    return (
+      <div className="wrapper">
+        <h2>Home</h2>
+      </div>
+    );
   }
 }

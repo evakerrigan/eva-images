@@ -1,3 +1,97 @@
-h1 {
-  color: red;
+@import url('https://fonts.googleapis.com/css2?family=Gurajada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ruthie&display=swap');
+
+.header {
+  width: 100%;
+  height: 60vh;
+  background-image: url('../../assets/image/header-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.header-overlay {
+  width: 100%;
+  height: 100%;
+  Background-image: url('../../assets/image/overlay.png');
+  opacity: 0.5;
+  position: static;
+  z-index: -1;
+}
+
+.header-dark-overlay {
+  width: 100%;
+  height: 100%;
+  color: #f1f1f1;
+  background: rgba(0, 0, 0, 0.48);
+}
+.header-dark-top {
+  // background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+  background: rgba(0, 0, 0, 0.9);
+}
+.header-logo-link {
+  font-family: 'Gurajada', serif;
+  font-size: 45px;
+  line-height: 0.1;
+  font-weight: 500;
+  color: #fff;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.header-logo {
+  margin-top: 30vh;
+}
+
+h2.career {
+  font-family: 'Gurajada', serif;
+  font-size: 45px;
+  line-height: 0.1;
+  font-weight: 500;
+  color: #fff;
+}
+
+h2.name {
+  font-family: 'Ruthie', cursive;
+  font-size: 66px;
+  line-height: 0.1;
+  font-weight: 500;
+  color: #fff;
+}
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-item {
+  padding: 0 20px;
+}
+
+.header-link {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header-description {
+  font-size: 22px;
+  color: #fff;
+}
+
+.header-input {
+  font-size: 15px;
+  color: #000;
+  margin-top: 5vh;
+  padding: 10px;
+  width: 30vw;
+}
+
+.header-input:focus {
+  outline: 0;
 }
