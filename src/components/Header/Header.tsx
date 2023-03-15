@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
-export class Header extends React.Component {
+export class Header extends Component<{ title: string }> {
   render() {
     return (
       <header className="header">
@@ -11,20 +12,24 @@ export class Header extends React.Component {
               <div className="wrapper header-wrapper">
                 <h1>
                   <a className="header-logo-link" href="">
-                    Eva Images
+                    Eva&nbsp; Images
                   </a>
                 </h1>
                 <nav className="header-nav">
                   <ul className="header-list">
                     <li className="header-item">
-                      <a className="header-link">Home</a>
+                      <NavLink to={'/'} className="header-link">
+                        Home
+                      </NavLink>
                     </li>
                     <li className="header-item">
-                      <a className="header-link">About me</a>
+                      <NavLink to={'/about-us'} className="header-link">
+                        About me
+                      </NavLink>
                     </li>
                   </ul>
                 </nav>
-                <div className="header-description">Your at this page</div>
+                <div className="header-description">{this.props.title}</div>
               </div>
             </div>
             <div className="wrapper">

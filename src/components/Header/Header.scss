@@ -79,10 +79,14 @@ h2.name {
   color: #fff;
   cursor: pointer;
 }
+.header-link:hover {
+  border-bottom: 1px solid #fff;
+}
 
 .header-description {
   font-size: 22px;
   color: #fff;
+  font-style: italic;
 }
 
 .header-input {
