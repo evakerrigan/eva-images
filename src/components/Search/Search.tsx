@@ -23,17 +23,20 @@ export class Search extends Component<typePropsBimbo, typeStateInputValue> {
   }
 
   componentDidMount(): void {
-    console.log('монтирование инпута this.state.inputValue = ', this.state.inputValue);
-    if (localStorage.getItem('inputValue')) {
-      console.log('в локалсторадже = ', localStorage.getItem('inputValue'));
-      this.setState({ inputValue: localStorage.getItem('inputValue') });
+    console.log('монтирование инпута ----------- this.state.inputValue = ', this.state.inputValue);
+
+    const inputStorageValue = localStorage.getItem('inputValue');
+    if (inputStorageValue) {
+      console.log('в локалсторадже = ', inputStorageValue);
+      this.setState({ inputValue: inputStorageValue });
     } else {
       console.log('в локалсторадже пусто !');
     }
   }
 
   componentWillUnmount(): void {
-    console.log('размонтирование инпута');
+    console.log('размонтирование инпута -------------------------');
+    console.log('this.state.inputValue = ', this.state.inputValue);
     localStorage.setItem('inputValue', this.state.inputValue);
   }
 
