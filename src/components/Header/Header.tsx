@@ -33,9 +33,7 @@ export class Header extends Component<{ title: string }> {
                 <div className="header-description">{this.props.title}</div>
               </div>
             </div>
-            <div className="wrapper">
-              <Search />
-            </div>
+            <div className="wrapper">{this.props.title === 'Home' ? <Search /> : ' '}</div>
             <div className="wrapper">
               <div className="header-logo">
                 <h2 className="career">Photographer</h2>

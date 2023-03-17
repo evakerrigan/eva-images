@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { ChangeEvent, Component } from 'react';
 import './Search.scss';
 
 export type typeStateInputValue = {
@@ -15,13 +15,37 @@ export class Search extends Component<typePropsBimbo, typeStateInputValue> {
     this.state = {
       inputValue: '',
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount(): void {}
+  handleChange(event: ChangeEvent<HTMLInputElement>): void {
+    this.setState({ inputValue: event.target.value });
+  }
 
-  componentWillUnmount(): void {}
+  componentDidMount(): void {
+    console.log('монтирование инпута this.state.inputValue = ', this.state.inputValue);
+    if (localStorage.getItem('inputValue')) {
+      console.log('в локалсторадже = ', localStorage.getItem('inputValue'));
+      this.setState({ inputValue: localStorage.getItem('inputValue') });
+    } else {
+      console.log('в локалсторадже пусто !');
+    }
+  }
+
+  componentWillUnmount(): void {
+    console.log('размонтирование инпута');
+    localStorage.setItem('inputValue', this.state.inputValue);
+  }
 
   render() {
-    return <input className="header-input" placeholder="Search for ..."></input>;
+    return (
+      <input
+        className="header-input"
+        placeholder="Search for ..."
+        type="text"
+        value={this.state.inputValue}
+        onChange={this.handleChange}
+      ></input>
+    );
   }
 }
