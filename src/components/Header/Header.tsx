@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Search } from '../Search/Search';
 import './Header.scss';
 
 export class Header extends Component<{ title: string }> {
@@ -33,7 +34,7 @@ export class Header extends Component<{ title: string }> {
               </div>
             </div>
             <div className="wrapper">
-              <input className="header-input" placeholder="Search for ..."></input>
+              <Search />
             </div>
             <div className="wrapper">
               <div className="header-logo">
