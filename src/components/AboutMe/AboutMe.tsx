@@ -3,6 +3,10 @@ import './AboutMe.scss';
 
 export class AboutMe extends Component {
   render() {
-    return <h1>AboutMe</h1>;
+    return (
+      <div className="wrapper">
+        <h1>AboutMe</h1>
+      </div>
+    );
   }
 }
