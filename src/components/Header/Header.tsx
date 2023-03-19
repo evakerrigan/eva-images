@@ -12,33 +12,19 @@ export class Header extends Component<{ title: string }> {
             <div className="header-dark-top">
               <div className="wrapper header-wrapper">
                 <h1>
-                  <a className="header-logo-link" href="">
+                  <NavLink to={'/'} className="header-logo-link">
                     Eva&nbsp; Images
-                  </a>
+                  </NavLink>
                 </h1>
                 <nav className="header-nav">
                   <ul className="header-list">
                     <li className="header-item">
-                      <NavLink
-                        to={'/'}
-                        className="header-link"
-                        onClick={() =>
-                          console.log('                   \n --------нажали на ссылку Home--------')
-                        }
-                      >
+                      <NavLink to={'/'} className="header-link">
                         Home
                       </NavLink>
                     </li>
                     <li className="header-item">
-                      <NavLink
-                        to={'/about-us'}
-                        className="header-link"
-                        onClick={() =>
-                          console.log(
-                            '                   \n --------нажали на ссылку About me--------'
-                          )
-                        }
-                      >
+                      <NavLink to={'/about-me'} className="header-link">
                         About me
                       </NavLink>
                     </li>
