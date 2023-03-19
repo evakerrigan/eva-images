@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Home } from './components/Home/Home';
 import { AboutMe } from './components/AboutMe/AboutMe';
@@ -13,8 +13,9 @@ function App() {
       <Routes>
         <Route index element={<PageWrapper title="Home" content={<Home />} />} />
         <Route path="/" element={<PageWrapper title="Home" content={<Home />} />} />
-        <Route path="about-me" element={<PageWrapper title="AboutMe" content={<AboutMe />} />} />
-        <Route path="*" element={<PageWrapper title="NotFound" content={<NotFound />} />} />
+        <Route path="/about-me" element={<PageWrapper title="AboutMe" content={<AboutMe />} />} />
+        <Route path="/notfound" element={<PageWrapper title="NotFound" content={<NotFound />} />} />
+        <Route path="*" element={<Navigate to="/notfound" replace />} />
       </Routes>
       <Footer />
     </div>
