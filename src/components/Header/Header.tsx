@@ -19,12 +19,26 @@ export class Header extends Component<{ title: string }> {
                 <nav className="header-nav">
                   <ul className="header-list">
                     <li className="header-item">
-                      <NavLink to={'/'} className="header-link">
+                      <NavLink
+                        to={'/'}
+                        className="header-link"
+                        onClick={() =>
+                          console.log('                   \n --------нажали на ссылку Home--------')
+                        }
+                      >
                         Home
                       </NavLink>
                     </li>
                     <li className="header-item">
-                      <NavLink to={'/about-us'} className="header-link">
+                      <NavLink
+                        to={'/about-us'}
+                        className="header-link"
+                        onClick={() =>
+                          console.log(
+                            '                   \n --------нажали на ссылку About me--------'
+                          )
+                        }
+                      >
                         About me
                       </NavLink>
                     </li>
