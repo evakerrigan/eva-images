@@ -15,51 +15,51 @@
   },
   {
     "id": "3",
-    "title": "Child",
+    "title": "Girl and skate",
     "url": "image/cards/3.jpg",
     "shops": ["shutterstock"],
-    "tags": ["child"]
+    "tags": ["girl"]
   },
   {
     "id": "4",
-    "title": "Women and horse",
+    "title": "Teenager and music",
     "url": "image/cards/4.jpg",
     "shops": ["adobe"],
-    "tags": ["horse"]
+    "tags": ["man"]
   },
   {
     "id": "5",
-    "title": "Child",
+    "title": "Cat",
     "url": "image/cards/5.jpg",
     "shops": ["shutterstock"],
-    "tags": ["child"]
+    "tags": ["cat"]
   },
   {
     "id": "6",
-    "title": "Women and horse",
+    "title": "Boy",
     "url": "image/cards/6.jpg",
     "shops": ["adobe"],
-    "tags": ["horse"]
+    "tags": ["boy"]
   },
   {
     "id": "7",
-    "title": "Child",
+    "title": "Online work",
     "url": "image/cards/7.jpg",
     "shops": ["shutterstock"],
-    "tags": ["child"]
+    "tags": ["online work"]
   },
   {
     "id": "8",
-    "title": "Women and horse",
+    "title": "Women and skate",
     "url": "image/cards/8.jpg",
     "shops": ["adobe"],
-    "tags": ["horse"]
+    "tags": ["skate"]
   },
   {
     "id": "9",
-    "title": "Women and horse",
+    "title": "Football",
     "url": "image/cards/9.jpg",
     "shops": ["adobe"],
-    "tags": ["horse"]
+    "tags": ["football"]
   }
 ]
