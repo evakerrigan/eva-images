@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './NotFound.scss';
 
-export class NotFound extends React.Component {
+export class NotFound extends Component {
   render() {
     return (
       <div className="wrapper">
-        <h1>Это страница 404</h1>
+        <h1>NotFound</h1>
       </div>
     );
   }

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import './CardItem.scss';
 
-interface typeCard {
-  id: string;
-  title: string;
-  url: string;
-  shops: string[];
-  tags: string[];
+export interface Card {
+  id?: string;
+  title?: string;
+  url?: string;
+  shops?: string[];
+  tags?: string[];
 }
 
-type typeCardItem = {
-  card: typeCard;
+export type CardItemProps = {
+  card: Card;
 };
 
-export class CardItem extends Component<typeCardItem> {
+export class CardItem extends Component<CardItemProps> {
   render() {
     return (
       <div>
