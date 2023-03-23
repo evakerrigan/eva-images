@@ -1,28 +1,33 @@
-import React, { Component, createRef } from 'react';
+import React, { Component, createRef, RefObject } from 'react';
 import './Form.scss';
 
-export class Form extends Component {
-  inputImage = React.createRef();
-  inputTitle = React.createRef();
+export type typePropsElseBimbo = {
+  [key: string]: never;
+};
 
-  showInput(): void {
-    console.log(this.inputTitle.current.value);
+export class Form extends Component<typePropsElseBimbo> {
+  private refImage: RefObject<HTMLInputElement>;
+  private refTitle: RefObject<HTMLInputElement>;
+
+  constructor(props: typePropsElseBimbo) {
+    super(props);
+    this.refImage = createRef();
+    this.refTitle = createRef();
   }
+
+  // showInput(): void {
+  //   console.log(this.refTitle.current.value);
+  // }
 
   render() {
     return (
       <div className="wrapper">
         <h1>Form</h1>
         <div className="input-form">
-          <fieldset>
+          <fieldset className="input-fieldset">
             <legend className="input-legend-title">Form for your:</legend>
-            <input type="file" ref={this.inputImage} className="input input-image" />
-            <input
-              type="text"
-              onInput={this.showInput}
-              ref={this.inputTitle}
-              className="input input-text title"
-            />
+            <input type="file" ref={this.refImage} className="input input-image" />
+            <input type="text" ref={this.refTitle} className="input input-text title" />
             <input type="text" className="input input-text description" />
             <input type="text" className="input input-text tag" />
             <input type="select" className="input input-select stock" />
