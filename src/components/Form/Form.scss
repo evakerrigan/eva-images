@@ -1,0 +1,34 @@
+.input-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 700px;
+  margin: 0 auto;
+  color: #888;
+  justify-content: center;
+}
+.input {
+  display: block;
+  width: 80%;
+  margin: 0 10% 30px 10%;
+  padding: 10px;
+  outline: none;
+}
+.input-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+.input-radio {
+  width: 10px;
+  margin-left: 30%;
+}
+.input-checkbox {
+  width: 10px;
+  margin-left: 30%;
+}
+.input-legend-title {
+  margin: 0 10px 10px 10px;
+}
+.input-legend {
+  margin: 0 0 20px;
+  padding: 0 0 0 20px;
+}
