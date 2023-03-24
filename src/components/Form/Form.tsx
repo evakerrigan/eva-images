@@ -1,5 +1,6 @@
 import React, { Component, createRef, RefObject } from 'react';
 import './Form.scss';
+import { InputTitle } from './InputTitle/InputTitle';
 
 export type typePropsElseBimbo = {
   [key: string]: never;
@@ -26,8 +27,8 @@ export class Form extends Component<typePropsElseBimbo> {
         <div className="input-form">
           <fieldset className="input-fieldset">
             <legend className="input-legend-title">Form for your:</legend>
-            <input type="file" ref={this.refImage} className="input input-image" />
-            <input type="text" ref={this.refTitle} className="input input-text title" />
+            <input type="file" ref={this.refImage} className="input input-image file" />
+            <InputTitle refTitle={this.refTitle} />
             <input type="text" className="input input-text description" />
             <input type="text" className="input input-text tag" />
             <input type="select" className="input input-select stock" />
@@ -41,7 +42,7 @@ export class Form extends Component<typePropsElseBimbo> {
                   id="one"
                   name="drone"
                   value="one"
-                  className="input input-radio "
+                  className="input input-radio choice"
                 />
                 <label htmlFor="one">One</label>
               </div>
@@ -51,29 +52,19 @@ export class Form extends Component<typePropsElseBimbo> {
                   id="two"
                   name="drone"
                   value="two"
-                  className="input input-radio "
+                  className="input input-radio choice"
                 />
                 <label htmlFor="two">Two</label>
               </div>
             </div>
             <div>
-              <legend className="input-legend">Choose your stock:</legend>
+              <legend className="input-legend">
+                I agree to send my beautiful authors photo for sale and give all rights to it to Eva
+                Images:
+              </legend>
               <div className="input-wrapper">
-                <input
-                  type="checkbox"
-                  id="1"
-                  name="shutterstock"
-                  className="input input-checkbox "
-                />
-                <label htmlFor="1">Shutterstock</label>
-              </div>
-              <div className="input-wrapper">
-                <input type="checkbox" id="2" name="adobe" className="input input-checkbox " />
-                <label htmlFor="adobe">Adobe</label>
-              </div>
-              <div className="input-wrapper">
-                <input type="checkbox" id="2" name="getty" className="input input-checkbox " />
-                <label htmlFor="getty">Getty</label>
+                <input type="checkbox" id="2" name="agree" className="input input-checkbox agree" />
+                <label htmlFor="agree">I agree</label>
               </div>
             </div>
           </fieldset>
