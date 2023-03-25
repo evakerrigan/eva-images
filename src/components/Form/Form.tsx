@@ -1,7 +1,14 @@
 import React, { Component, createRef, RefObject } from 'react';
 import './Form.scss';
+import { InputDate } from './InputDate/InputDate';
+import { InputDescription } from './InputDescription/InputDescription';
 import { InputFile } from './InputFile/InputFile';
+import { InputLink } from './InputLink/InputLink';
+import { InputSelect } from './InputSelect/InputSelect';
+import { InputTag } from './InputTag/InputTag';
 import { InputTitle } from './InputTitle/InputTitle';
+import { InputStock } from './InputStock/InputStock';
+import { InputAgree } from './InputAgree/InputAgree';
 
 export type typePropsElseBimbo = {
   [key: string]: never;
@@ -10,11 +17,25 @@ export type typePropsElseBimbo = {
 export class Form extends Component<typePropsElseBimbo> {
   private refFile: RefObject<HTMLInputElement>;
   private refTitle: RefObject<HTMLInputElement>;
+  private refDescription: RefObject<HTMLInputElement>;
+  private refTag: RefObject<HTMLInputElement>;
+  private refSelect: RefObject<HTMLSelectElement>;
+  private refLink: RefObject<HTMLInputElement>;
+  private refDate: RefObject<HTMLInputElement>;
+  private refStock: RefObject<HTMLInputElement>;
+  private refAgree: RefObject<HTMLInputElement>;
 
   constructor(props: typePropsElseBimbo) {
     super(props);
     this.refFile = createRef();
     this.refTitle = createRef();
+    this.refDescription = createRef();
+    this.refTag = createRef();
+    this.refSelect = createRef();
+    this.refLink = createRef();
+    this.refDate = createRef();
+    this.refStock = createRef();
+    this.refAgree = createRef();
   }
 
   // showInput(): void {
@@ -30,53 +51,13 @@ export class Form extends Component<typePropsElseBimbo> {
             <legend className="input-legend-title">Form for your:</legend>
             <InputFile refFile={this.refFile} />
             <InputTitle refTitle={this.refTitle} />
-            <input
-              type="text"
-              placeholder="Photo Description"
-              className="input input-text description"
-            />
-            <input type="text" placeholder="Photo Tags" className="input input-text tag" />
-            <select name="select" className="input input-select stock">
-              <option value="0">Select</option>
-              <option value="adobe">Adobe</option>
-              <option value="getty">Getty</option>
-              <option value="offset">Offset</option>
-            </select>
-            <input type="text" placeholder="Stock Link" className="input input-text link" />
-            <input type="date" className="input input-date date" />
-            <div>
-              <legend className="input-legend">Choose the style of your photo:</legend>
-              <div className="input-wrapper">
-                <input
-                  type="radio"
-                  id="one"
-                  name="drone"
-                  value="one"
-                  className="input input-radio choice"
-                />
-                <label htmlFor="one">Lifestyle</label>
-              </div>
-              <div className="input-wrapper">
-                <input
-                  type="radio"
-                  id="two"
-                  name="drone"
-                  value="two"
-                  className="input input-radio choice"
-                />
-                <label htmlFor="two">Studio</label>
-              </div>
-            </div>
-            <div>
-              <legend className="input-legend">
-                I agree to send my beautiful authors photo for sale and give all rights to it to Eva
-                Images:
-              </legend>
-              <div className="input-wrapper">
-                <input type="checkbox" id="2" name="agree" className="input input-checkbox agree" />
-                <label htmlFor="agree">I agree</label>
-              </div>
-            </div>
+            <InputDescription refDescription={this.refDescription} />
+            <InputTag refTag={this.refTag} />
+            <InputSelect refSelect={this.refSelect} />
+            <InputLink refLink={this.refLink} />
+            <InputDate refDate={this.refDate} />
+            <InputStock refStock={this.refStock} />
+            <InputAgree refAgree={this.refAgree} />
             <button className="form-button">Отправить</button>
           </fieldset>
         </div>
