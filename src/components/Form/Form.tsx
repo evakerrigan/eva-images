@@ -1,5 +1,6 @@
 import React, { Component, createRef, RefObject } from 'react';
 import './Form.scss';
+import { InputFile } from './InputFile/InputFile';
 import { InputTitle } from './InputTitle/InputTitle';
 
 export type typePropsElseBimbo = {
@@ -7,12 +8,12 @@ export type typePropsElseBimbo = {
 };
 
 export class Form extends Component<typePropsElseBimbo> {
-  private refImage: RefObject<HTMLInputElement>;
+  private refFile: RefObject<HTMLInputElement>;
   private refTitle: RefObject<HTMLInputElement>;
 
   constructor(props: typePropsElseBimbo) {
     super(props);
-    this.refImage = createRef();
+    this.refFile = createRef();
     this.refTitle = createRef();
   }
 
@@ -27,15 +28,24 @@ export class Form extends Component<typePropsElseBimbo> {
         <div className="input-form">
           <fieldset className="input-fieldset">
             <legend className="input-legend-title">Form for your:</legend>
-            <input type="file" ref={this.refImage} className="input input-image file" />
+            <InputFile refFile={this.refFile} />
             <InputTitle refTitle={this.refTitle} />
-            <input type="text" className="input input-text description" />
-            <input type="text" className="input input-text tag" />
-            <input type="select" className="input input-select stock" />
-            <input type="text" className="input input-text link" />
+            <input
+              type="text"
+              placeholder="Photo Description"
+              className="input input-text description"
+            />
+            <input type="text" placeholder="Photo Tags" className="input input-text tag" />
+            <select name="select" className="input input-select stock">
+              <option value="0">Select</option>
+              <option value="adobe">Adobe</option>
+              <option value="getty">Getty</option>
+              <option value="offset">Offset</option>
+            </select>
+            <input type="text" placeholder="Stock Link" className="input input-text link" />
             <input type="date" className="input input-date date" />
             <div>
-              <legend className="input-legend">Choose your:</legend>
+              <legend className="input-legend">Choose the style of your photo:</legend>
               <div className="input-wrapper">
                 <input
                   type="radio"
@@ -44,7 +54,7 @@ export class Form extends Component<typePropsElseBimbo> {
                   value="one"
                   className="input input-radio choice"
                 />
-                <label htmlFor="one">One</label>
+                <label htmlFor="one">Lifestyle</label>
               </div>
               <div className="input-wrapper">
                 <input
@@ -54,7 +64,7 @@ export class Form extends Component<typePropsElseBimbo> {
                   value="two"
                   className="input input-radio choice"
                 />
-                <label htmlFor="two">Two</label>
+                <label htmlFor="two">Studio</label>
               </div>
             </div>
             <div>
@@ -67,6 +77,7 @@ export class Form extends Component<typePropsElseBimbo> {
                 <label htmlFor="agree">I agree</label>
               </div>
             </div>
+            <button className="form-button">Отправить</button>
           </fieldset>
         </div>
       </div>

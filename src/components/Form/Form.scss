@@ -6,6 +6,7 @@
   color: #888;
   justify-content: center;
 }
+
 .input {
   display: block;
   width: 80%;
@@ -13,32 +14,54 @@
   padding: 10px;
   outline: none;
 }
+
 .input-wrapper {
   display: flex;
   justify-content: flex-start;
 }
+
 .input-radio {
   width: 10px;
   margin-left: 30%;
 }
+
 .input-checkbox {
   width: 10px;
   margin-left: 30%;
 }
+
 .input-fieldset {
   width: 500px;
 }
+
 .input-legend-title {
   margin: 0 10px 10px 10px;
 }
+
 .input-legend {
   margin: 0 0 20px;
   padding: 0 0 0 20px;
 }
+
 .input-checkbox {
   transform: scale(2);
   cursor: pointer;
 }
-.input.title {
-  border: 5px solid blue;
+
+.form-button {
+  cursor: pointer;
+  margin: 0 0 10px 300px;
+  padding: 10px 30px;
+  background-color: #888;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
+.form-button:hover {
+  background-color: #666;
+}
+
+.form-button:active {
+  background-color: #444;
 }
