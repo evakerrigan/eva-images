@@ -2,7 +2,7 @@ import React, { Component, RefObject } from 'react';
 
 type typeRefAgree = RefObject<HTMLInputElement>;
 
-export class InputAgree extends Component<{ refAgree: typeRefAgree }> {
+export class InputAgree extends Component<{ refAgree: typeRefAgree; er: boolean }> {
   render() {
     return (
       <div>
@@ -20,6 +20,7 @@ export class InputAgree extends Component<{ refAgree: typeRefAgree }> {
           />
           <label htmlFor="agree">I agree</label>
         </div>
+        {this.props.er ? <p>Не дано согласие на продажу фото</p> : null}
       </div>
     );
   }

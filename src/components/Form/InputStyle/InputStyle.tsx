@@ -1,18 +1,22 @@
 import React, { Component, RefObject } from 'react';
 
-type typeRefStock = RefObject<HTMLInputElement>;
+type typeRefStyle = RefObject<HTMLInputElement>;
 
-export class InputStock extends Component<{ refStock: typeRefStock }> {
+export class InputStyle extends Component<{
+  refStyleLifestyle: typeRefStyle;
+  refStyleStudio: typeRefStyle;
+  er: boolean;
+}> {
   render() {
     return (
       <div>
         <legend className="input-legend">Choose the style of your photo:</legend>
         <div className="input-wrapper">
           <input
-            ref={this.props.refStock}
+            ref={this.props.refStyleLifestyle}
             type="radio"
             id="one"
-            name="stock"
+            name="style"
             value="lifestyle"
             className="input input-radio choice"
           />
@@ -20,15 +24,16 @@ export class InputStock extends Component<{ refStock: typeRefStock }> {
         </div>
         <div className="input-wrapper">
           <input
-            ref={this.props.refStock}
+            ref={this.props.refStyleStudio}
             type="radio"
             id="two"
-            name="stock"
+            name="style"
             value="studio"
             className="input input-radio choice"
           />
-          <label htmlFor="two">Studio</label>
+          <label htmlFor="two">Studio style</label>
         </div>
+        {this.props.er ? <p>Не выбран стиль фотографии</p> : null}
       </div>
     );
   }
