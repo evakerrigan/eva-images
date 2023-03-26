@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 700px;
-  margin: 0 auto;
+  margin: 40px auto 20px auto;
   color: #888;
   justify-content: center;
 }
@@ -10,7 +10,7 @@
 .input {
   display: block;
   width: 80%;
-  margin: 0 10% 30px 10%;
+  margin: 30px 10% 0 10%;
   padding: 10px;
   outline: none;
 }
@@ -39,8 +39,7 @@
 }
 
 .input-legend {
-  margin: 0 0 20px;
-  padding: 0 0 0 20px;
+  margin: 0 10% 20px 10%;
 }
 
 .input-checkbox {
@@ -64,4 +63,31 @@
 
 .form-button:active {
   background-color: #444;
+}
+
+.output {
+  padding: 20px 10px;
+  margin: 20px 0;
+  border: 1px solid #888;
+  color: #888;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.input-error {
+  color: red;
+  margin: 0 10px 30px 10%;
+}
+.input-modal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: green;
+  color: #fff;
+  padding: 40px;
+}
+.input-modal.active {
+  display: block;
 }
