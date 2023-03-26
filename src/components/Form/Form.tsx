@@ -132,7 +132,6 @@ export class Form extends Component<typePropsElseBimbo, myState> {
           </fieldset>
         </form>
         <div className="output">
-          <p>output</p>
           {this.state.saleList.map((item, i) => (
             <SalePhotoCard key={i} item={item} />
           ))}

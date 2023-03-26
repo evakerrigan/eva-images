@@ -33,7 +33,7 @@ export class InputStyle extends Component<{
           />
           <label htmlFor="two">Studio style</label>
         </div>
-        {this.props.er ? <p>Не выбран стиль фотографии</p> : null}
+        {this.props.er ? <p className="input-error">Не выбран стиль фотографии</p> : null}
       </div>
     );
   }

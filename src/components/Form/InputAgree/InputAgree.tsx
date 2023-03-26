@@ -20,7 +20,7 @@ export class InputAgree extends Component<{ refAgree: typeRefAgree; er: boolean 
           />
           <label htmlFor="agree">I agree</label>
         </div>
-        {this.props.er ? <p>Не дано согласие на продажу фото</p> : null}
+        {this.props.er ? <p className="input-error">Не дано согласие на продажу фото</p> : null}
       </div>
     );
   }

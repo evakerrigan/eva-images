@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './SalePhotoCard.scss';
 
 interface ISalePhotoCard {
   item: {
@@ -14,7 +15,7 @@ export default class SalePhotoCard extends Component<ISalePhotoCard> {
   render() {
     const { photo, title, select, date, style } = this.props.item;
     return (
-      <div>
+      <div className="output-card">
         <h3 className="title">{title}</h3>
         <img src={photo} alt="" />
         <div className="select">{select}</div>

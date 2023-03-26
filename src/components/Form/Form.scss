@@ -10,7 +10,7 @@
 .input {
   display: block;
   width: 80%;
-  margin: 0 10% 30px 10%;
+  margin: 30px 10% 0 10%;
   padding: 10px;
   outline: none;
 }
@@ -39,8 +39,7 @@
 }
 
 .input-legend {
-  margin: 0 0 20px;
-  padding: 0 0 0 20px;
+  margin: 0 0 20px 10%;
 }
 
 .input-checkbox {
@@ -65,12 +64,18 @@
 .form-button:active {
   background-color: #444;
 }
+
 .output {
   padding: 20px 10px;
   margin: 20px 0;
   border: 1px solid #888;
   color: #888;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-.output img {
-  width: 30%;
+
+.input-error {
+  color: red;
+  margin: 0 10px 30px 10%;
 }

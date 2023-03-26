@@ -12,7 +12,7 @@ export class InputSelect extends Component<{ refSelect: typeRefSelect; er: boole
           <option value="getty">Getty</option>
           <option value="offset">Offset</option>
         </select>
-        {this.props.er ? <p>Не выбран фотосток</p> : null}
+        {this.props.er ? <p className="input-error">Не выбран фотосток</p> : null}
       </>
     );
   }

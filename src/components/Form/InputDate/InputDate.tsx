@@ -7,7 +7,7 @@ export class InputDate extends Component<{ refDate: typeRefDate; er: boolean }> 
     return (
       <>
         <input type="date" ref={this.props.refDate} className="input input-date date" />
-        {this.props.er ? <p>Нет даты съемки</p> : null}
+        {this.props.er ? <p className="input-error">Нет даты съемки</p> : null}
       </>
     );
   }
