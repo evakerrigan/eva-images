@@ -37,15 +37,20 @@ export class Form extends Component<typePropsElseBimbo> {
     this.refStock = createRef();
     this.refAgree = createRef();
   }
-
-  // showInput(): void {
-  //   console.log(this.refTitle.current.value);
-  // }
+  handleButton() {
+    const photo = this.refFile?.current;
+    const title = this.refTitle;
+  }
 
   render() {
+    const photo = URL.createObjectURL((this.photo.files as FileList)[0]);
+
     return (
       <div className="wrapper">
-        <h1>Form</h1>
+        <div className="output">
+          <p>output</p>
+          {photo ? <img src={photo} /> : ''}
+        </div>
         <div className="input-form">
           <fieldset className="input-fieldset">
             <legend className="input-legend-title">Form for your:</legend>
@@ -58,7 +63,9 @@ export class Form extends Component<typePropsElseBimbo> {
             <InputDate refDate={this.refDate} />
             <InputStock refStock={this.refStock} />
             <InputAgree refAgree={this.refAgree} />
-            <button className="form-button">Отправить</button>
+            <button onClick={() => this.handleButton()} className="form-button">
+              Отправить
+            </button>
           </fieldset>
         </div>
       </div>
