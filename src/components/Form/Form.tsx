@@ -7,6 +7,7 @@ import { InputTitle } from './InputTitle/InputTitle';
 import { InputStyle } from './InputStyle/InputStyle';
 import { InputAgree } from './InputAgree/InputAgree';
 import SalePhotoCard from '../SalePhotoCard/SalePhotoCard';
+import { Modal } from '../Modal/Modal';
 
 export type typePropsElseBimbo = {
   [key: string]: never;
@@ -14,6 +15,7 @@ export type typePropsElseBimbo = {
 
 interface myState {
   saleList: myCard[];
+  modal: boolean;
   errors: {
     refFile: boolean;
     refTitle: boolean;
@@ -54,6 +56,7 @@ export class Form extends Component<typePropsElseBimbo, myState> {
     this.refForm = createRef();
     this.state = {
       saleList: [],
+      modal: false,
       errors: {
         refFile: false,
         refTitle: false,
@@ -106,6 +109,10 @@ export class Form extends Component<typePropsElseBimbo, myState> {
         style: style ? style : '',
       };
       this.setState({ saleList: [...this.state.saleList, card] });
+      this.setState({ modal: true });
+      setTimeout(() => {
+        this.setState({ modal: false });
+      }, 5000);
       this.refForm?.current ? this.refForm?.current.reset() : '';
     }
   }
@@ -136,6 +143,7 @@ export class Form extends Component<typePropsElseBimbo, myState> {
             <SalePhotoCard key={i} item={item} />
           ))}
         </div>
+        {this.state.modal === true ? <Modal /> : null}
       </div>
     );
   }
