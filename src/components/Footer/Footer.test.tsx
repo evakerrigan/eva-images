@@ -4,6 +4,6 @@ import { Footer } from './Footer';
 
 test('Footer renders correctly', () => {
   render(<Footer />);
-  const textElement = screen.getByText('Footer');
+  const textElement = screen.getByText('evakerrigan');
   expect(textElement).toBeInTheDocument();
 });
