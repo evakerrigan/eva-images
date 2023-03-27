@@ -3,6 +3,10 @@ import './Modal.scss';
 
 export class Modal extends Component {
   render() {
-    return <div className="input-modal">Ваша фотография отправлена на продажу !</div>;
+    return (
+      <div className="input-modal">
+        <p>Your photo has been sent for sale !</p>
+      </div>
+    );
   }
 }

@@ -6,7 +6,7 @@ import { InputSelect } from './InputSelect/InputSelect';
 import { InputTitle } from './InputTitle/InputTitle';
 import { InputStyle } from './InputStyle/InputStyle';
 import { InputAgree } from './InputAgree/InputAgree';
-import SalePhotoCard from '../SalePhotoCard/SalePhotoCard';
+import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
 import { Modal } from '../Modal/Modal';
 
 export type typePropsElseBimbo = {
