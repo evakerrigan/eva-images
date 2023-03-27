@@ -12,11 +12,3 @@ test('App renders correctly', () => {
   const textElement = screen.getByText('Kseniia Liubasova');
   expect(textElement).toBeInTheDocument();
 });
-
-// describe('App', () => {
-//   it('App renders', () => {
-//     render(<App />);
-//     const element = screen.getByText(/cards/i);
-//     expect(element).toBeInTheDocument();
-//   });
-// });
