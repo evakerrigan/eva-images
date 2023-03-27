@@ -5,16 +5,17 @@ export class AboutMe extends Component {
   render() {
     return (
       <div className="wrapper">
-        <h1 className="about-title">AboutMe</h1>
+        <h2 className="about-title">AboutMe</h2>
         <div className="about-wrapper">
           <div className="about-photo-wrapper">
             <div className="about-photo"></div>
           </div>
           <div className="about-text">
+            <p className="about-paragraph">Привет !</p>
             <p className="about-paragraph">
-              Привет ! Я успешный фотограф, специализирующийся на лайфстайл съемках. Мои работы
-              высоко оцениваются клиентами и используются в рекламных кампаниях. Я являюсь одним из
-              тех людей, которые умеют создавать на фотографиях атмосферу, и она заставляет зрителей
+              Я успешный фотограф, специализирующийся на лайфстайл съемках. Мои работы высоко
+              оцениваются клиентами и используются в рекламных кампаниях. Я являюсь одним из тех
+              людей, которые умеют создавать на фотографиях атмосферу, и она заставляет зрителей
               остановиться и задуматься.
             </p>
 
