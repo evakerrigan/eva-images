@@ -16,6 +16,17 @@
 .footer__inner-left, .footer__inner-right {
   display: flex;
   flex-direction: column;
+  width: 33%;
+}
+.footer__inner-year {
+  width: 33%;
+  text-align: center;
+}
+.footer__inner-left{
+  align-items: flex-start;
+}
+.footer__inner-right {
+  align-items: flex-end;
 }
 .footer__link {
   position: relative;
