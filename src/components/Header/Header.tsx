@@ -39,7 +39,7 @@ export class Header extends Component<{ title: string }> {
               </div>
             </div>
             <div className="wrapper">{this.props.title === 'Home' ? <Search /> : ' '}</div>
-            <div className="wrapper">
+            <div className="wrapper header-logo-wrapper">
               <div className="header-logo">
                 <h2 className="career">Photographer</h2>
                 <h2 className="name">

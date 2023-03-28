@@ -133,9 +133,11 @@ export class Form extends Component<typePropsElseBimbo, myState> {
               er={this.state.errors.refStyle}
             />
             <InputAgree refAgree={this.refAgree} er={this.state.errors.refAgree} />
-            <button onClick={(e) => this.handleButton(e)} className="form-button">
-              Отправить
-            </button>
+            <div className="input-button-wrapper">
+              <button onClick={(e) => this.handleButton(e)} className="form-button">
+                Отправить
+              </button>
+            </div>
           </fieldset>
         </form>
         <div className="output">
