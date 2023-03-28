@@ -6,6 +6,9 @@
   color: #888;
   justify-content: center;
 }
+.input-image {
+  padding: 0;
+}
 
 .input {
   display: block;
@@ -68,7 +71,6 @@
 .output {
   padding: 20px 10px;
   margin: 20px 0;
-  border: 1px solid #888;
   color: #888;
   display: flex;
   justify-content: space-evenly;
