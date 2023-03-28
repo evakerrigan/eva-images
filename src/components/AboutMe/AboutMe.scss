@@ -49,3 +49,18 @@
   border-bottom: none;
 
 }
+
+@media (max-width: 800px) {
+  .about-wrapper {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .about-photo-wrapper {
+    width: 80%;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+}
