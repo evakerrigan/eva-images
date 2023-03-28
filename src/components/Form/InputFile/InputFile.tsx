@@ -6,7 +6,12 @@ export class InputFile extends Component<{ refFile: typeRefFile; er: boolean }> 
   render() {
     return (
       <>
-        <input type="file" ref={this.props.refFile} className="input input-image file" />
+        <input
+          type="file"
+          ref={this.props.refFile}
+          accept="image/png, image/jpeg"
+          className="input input-image file"
+        />
         {this.props.er ? <p className="input-error">Нет картинки</p> : null}
       </>
     );

@@ -93,7 +93,7 @@ export class Form extends Component<typePropsElseBimbo, myState> {
     };
 
     photo.value.length > 0 ? null : (er.refFile = true);
-    title.length > 0 ? null : (er.refTitle = true);
+    title.length > 0 && title[0] == title[0].toUpperCase() ? null : (er.refTitle = true);
     select !== 'select' ? null : (er.refSelect = true);
     date.length > 0 ? null : (er.refDate = true);
     style ? null : (er.refStyle = true);
