@@ -12,6 +12,6 @@ describe('CardList renders correctly', () => {
   it('renders Card', () => {
     render(<Home />);
     const images = screen.getAllByRole('img');
-    expect(images.length).toBe(9);
+    expect(images.length).toBe(27);
   });
 });
