@@ -12,7 +12,11 @@ export class InputTitle extends Component<{ refTitle: typeRefTitle; er: boolean 
           placeholder="Photo Title"
           className="input input-text title"
         />
-        {this.props.er ? <p className="input-error">Нет названия фото</p> : null}
+        {this.props.er ? (
+          <p className="input-error">
+            Название фото должно содержать хотя бы 1 букву и должно начинаться с заглавной{' '}
+          </p>
+        ) : null}
       </>
     );
   }
