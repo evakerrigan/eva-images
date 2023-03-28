@@ -6,6 +6,8 @@ export interface Card {
   title?: string;
   url?: string;
   shops?: string[];
+  price?: string;
+  stockurl?: string;
   tags?: string[];
 }
 
@@ -17,8 +19,32 @@ export class CardItem extends Component<CardItemProps> {
   render() {
     return (
       <div>
-        <img className="card-image" src={this.props.card.url} />
-        <div className="card-title">{this.props.card.title}</div>
+        {this.props.card.stockurl ? (
+          <a
+            href={this.props.card.stockurl}
+            target="_blank"
+            className="card-image-link"
+            rel="noreferrer"
+          >
+            <img className="card-image" src={this.props.card.url} alt={this.props.card.title} />
+          </a>
+        ) : (
+          <img className="card-image" src={this.props.card.url} alt={this.props.card.title} />
+        )}
+
+        <div className="card-sale-wrapper">
+          <div className="card-sale-price">
+            {this.props.card.price ? 'Buy at ' + this.props.card.price + '$' : ''}
+          </div>
+          <a
+            href={this.props.card.stockurl}
+            target="_blank"
+            className="card-sale-link"
+            rel="noreferrer"
+          >
+            {this.props.card.shops}
+          </a>
+        </div>
       </div>
     );
   }

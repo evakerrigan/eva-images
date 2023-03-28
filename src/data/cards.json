@@ -3,63 +3,81 @@
     "id": "1",
     "title": "Child",
     "url": "image/cards/1.jpg",
-    "shops": ["shutterstock"],
+    "shops": [""],
+    "price": "",
+    "stockurl": "",
     "tags": ["child"]
   },
   {
     "id": "2",
     "title": "Women and horse",
     "url": "image/cards/2.jpg",
-    "shops": ["adobe"],
-    "tags": ["horse"]
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/young-woman-walks-with-horse-across-field-meadow/472470015?prev_url=detail",
+    "tags": ["horse, young, woman, getting away from it all"]
   },
   {
     "id": "3",
     "title": "Girl and skate",
     "url": "image/cards/3.jpg",
-    "shops": ["shutterstock"],
-    "tags": ["girl"]
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/happy-woman-on-skateboard-listen-to-phone/481022582?prev_url=detail",
+    "tags": ["girl, skate"]
   },
   {
     "id": "4",
     "title": "Teenager and music",
     "url": "image/cards/4.jpg",
-    "shops": ["adobe"],
-    "tags": ["man"]
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/young-man-teen-traveling-in-train-with-headphones/568330232?prev_url=detail",
+    "tags": ["man, music, travel"]
   },
   {
     "id": "5",
     "title": "Cat",
     "url": "image/cards/5.jpg",
-    "shops": ["shutterstock"],
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-and-red-ginger-cat-in-trailer-with-phone/469822814?prev_url=detail",
     "tags": ["cat"]
   },
   {
     "id": "6",
     "title": "Boy",
     "url": "image/cards/6.jpg",
-    "shops": ["adobe"],
+    "shops": [""],
+    "price": "",
+    "stockurl": "",
     "tags": ["boy"]
   },
   {
     "id": "7",
     "title": "Online work",
     "url": "image/cards/7.jpg",
-    "shops": ["shutterstock"],
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-at-laptop-with-phone-working-near-trailer/469822799?prev_url=detail",
     "tags": ["online work"]
   },
   {
     "id": "8",
     "title": "Women and skate",
     "url": "image/cards/8.jpg",
-    "shops": ["adobe"],
+    "shops": [""],
+    "price": "",
+    "stockurl": "",
     "tags": ["skate"]
   },
   {
     "id": "9",
     "title": "Football",
     "url": "image/cards/9.jpg",
-    "shops": ["adobe"],
+    "shops": ["adobe.com"],
+    "price": "80",
+    "stockurl": "https://stock.adobe.com/ru/images/lifestyle-of-two-children-and-soccer-ball-sitting-on-grass-laughing-and-talking-concept-about-childhood-sports-and-communication-of-preschool/396026924?prev_url=detail",
     "tags": ["football"]
   }
 ]

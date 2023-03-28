@@ -3,6 +3,30 @@
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+
 .card-title {
   color: #777;
+}
+
+.card-sale-wrapper {
+  color: #777;
+}
+
+.card-sale-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-sale-price {
+  color: #aaa;
+}
+
+.card-sale-link {
+  color: #aaa;
+  border-bottom: 1px solid #888;
+}
+.card-sale-link:hover {
+  color: #fff;
+  border-bottom: none;
 }
