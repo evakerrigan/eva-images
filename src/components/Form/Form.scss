@@ -1,12 +1,11 @@
 .input-form {
   display: flex;
   flex-wrap: wrap;
-  width: 700px;
   margin: 40px auto 20px auto;
   color: #888;
   justify-content: center;
 }
-.input-image {
+.input.input-image {
   padding: 0;
 }
 
@@ -25,12 +24,13 @@
 
 .input-radio {
   width: 10px;
-  margin-left: 30%;
+  margin: 2px 10px 0 10%;
+  transform: scale(1.5);
 }
 
 .input-checkbox {
   width: 10px;
-  margin-left: 30%;
+  margin: 2px 10px 0 11%;
 }
 
 .input-fieldset {
@@ -42,17 +42,17 @@
 }
 
 .input-legend {
-  margin: 0 10% 20px 10%;
+  margin: 20px 10% 20px 10%;
 }
 
 .input-checkbox {
-  transform: scale(2);
+  transform: scale(1.5);
   cursor: pointer;
 }
 
 .form-button {
   cursor: pointer;
-  margin: 0 0 10px 300px;
+  margin: 0 10% 10px 0;
   padding: 10px 30px;
   background-color: #888;
   color: #fff;
@@ -92,4 +92,14 @@
 }
 .input-modal.active {
   display: block;
+}
+.input-button-wrapper  {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0 0 0;
+}
+@media (max-width: 500px) {
+  .input-fieldset {
+    width: 90%;
+}
 }
