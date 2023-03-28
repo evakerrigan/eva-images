@@ -1,7 +1,13 @@
+.card-image-link:hover .card-image {
+  transform: scale(1.055);
+  filter: brightness(70%);
+}
+
 .card-image {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+  transition: 1s;
 }
 
 .card-title {
@@ -26,6 +32,7 @@
   color: #aaa;
   border-bottom: 1px solid #888;
 }
+
 .card-sale-link:hover {
   color: #fff;
   border-bottom: none;

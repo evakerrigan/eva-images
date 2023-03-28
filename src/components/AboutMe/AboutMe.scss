@@ -36,11 +36,16 @@
   font-size: 20px;
   margin: 0 0 30px 0;
 }
+
 .about-link {
   color: #aaa;
   border-bottom: 1px solid #888;
+  font-size: 16px;
+  font-style: italic;
 }
+
 .about-link:hover {
   color: #888;
   border-bottom: none;
+
 }
