@@ -41,6 +41,17 @@ export class AboutMe extends Component {
               Сайт поможет вам найти места где можно купить мои фотографии для украшения своего
               интерьера или вашей рекламы.
             </p>
+            <p className="about-paragraph">
+              Write to me for any questions:{' '}
+              <a
+                href="https://t.me/EvaKerrigan"
+                target="_blank"
+                className="about-link"
+                rel="noreferrer"
+              >
+                https://t.me/EvaKerrigan
+              </a>
+            </p>
           </div>
         </div>
       </div>
