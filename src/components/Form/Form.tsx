@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import './Form.scss';
 import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
@@ -19,16 +19,12 @@ interface myCard {
   select: string;
   date: string;
   style: string;
+  agree?: boolean;
 }
 
-export function Form(
-  props: { [key: string]: typePropsElseBimbo },
-  state: { saleList: myState; modal: myState }
-) {
-  state = {
-    saleList: [],
-    modal: false,
-  };
+export function Form() {
+  const [ stateForm, setStateForm ] = useState({ saleList: [], modal: false });
+
   const {
     register,
     formState: { errors },
@@ -36,11 +32,30 @@ export function Form(
     reset,
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: myCard) => {
     alert(JSON.stringify(data));
     console.log(data);
     console.log(errors);
     reset();
+
+    const photo = data.inputFile as HTMLInputElement;
+    const title = (data.inputTitle as HTMLInputElement).value;
+    const select = (data.inputSelect as HTMLSelectElement).value;
+    const date = (data.inputDate as HTMLInputElement).value;
+    const style = data.inputStyle as HTMLInputElement;
+
+    const card = {
+      photo: URL.createObjectURL(((photo as HTMLInputElement).files as FileList)[0]),
+      title: title,
+      select: select,
+      date: date,
+      style: style ? style : '',
+    };
+    setStateForm({ saleList: [...stateForm.saleList, card] });
+    setStateForm({ modal: true });
+    setTimeout(() => {
+      setStateForm({ modal: false });
+    }, 5000);
   };
 
   return (
@@ -137,53 +152,12 @@ export function Form(
           </div>
         </fieldset>
       </form>
-      {/* <div className="output">
-        {state.saleList.map((item, i) => (
+      <div className="output">
+        {stateForm.saleList.map((item: myCard, i: number) => (
           <SalePhotoCard key={i} item={item} />
         ))}
       </div>
-      {state.modal === true ? <Modal /> : null} */}
+      {stateForm.modal === true ? <Modal /> : null}
     </div>
   );
 }
-
-// handleButton(e: FormEvent) {
-//   e.preventDefault();
-//   const photo = refFile.current as HTMLInputElement;
-//   const title = (trefTitle.current as HTMLInputElement).value;
-//   const select = (refSelect.current as HTMLSelectElement).value;
-//   const date = (trefDate.current as HTMLInputElement).value;
-//   const styleLifestyle = refStyleLifestyle?.current?.checked;
-//   const styleStudio = refStyleStudio?.current?.checked;
-//   let style: string | undefined;
-//   if (styleLifestyle) {
-//     style = refStyleLifestyle?.current?.value;
-//   } else if (styleStudio) {
-//     style = refStyleStudio?.current?.value;
-//   }
-//   const agree = refAgree?.current?.checked;
-
-//   photo.value.length > 0 ? null : (er.refFile = true);
-//   title.length > 0 && title[0] == title[0].toUpperCase() ? null : (er.refTitle = true);
-//   select !== 'select' ? null : (er.refSelect = true);
-//   date.length > 0 ? null : (er.refDate = true);
-//   style ? null : (er.refStyle = true);
-//   agree ? null : (er.refAgree = true);
-
-//   setState({ errors: er });
-//   if (Object.values(er).every((item) => !item)) {
-//     const card = {
-//       photo: URL.createObjectURL(((photo as HTMLInputElement).files as FileList)[0]),
-//       title: title,
-//       select: select,
-//       date: date,
-//       style: style ? style : '',
-//     };
-//     setState({ saleList: [...this.state.saleList, card] });
-//     setState({ modal: true });
-//     setTimeout(() => {
-//       setState({ modal: false });
-//     }, 5000);
-//     refForm?.current ? refForm?.current.reset() : '';
-//   }
-// }
