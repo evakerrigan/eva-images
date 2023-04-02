@@ -8,8 +8,10 @@ export type typePropsElseBimbo = {
   [key: string]: never;
 };
 
-interface myState {
-  saleList: myCard[];
+// interface myState {
+//   saleList: myCard[];
+// }
+interface myModal {
   modal: boolean;
 }
 
@@ -23,7 +25,8 @@ interface myCard {
 }
 
 export function Form() {
-  const [ stateForm, setStateForm ] = useState({ saleList: [], modal: false });
+  const [stateForm, setStateForm] = useState();
+  const [stateModal, setStateModal] = useState(false);
 
   const {
     register,
@@ -32,29 +35,38 @@ export function Form() {
     reset,
   } = useForm();
 
-  const onSubmit = (data: myCard) => {
-    alert(JSON.stringify(data));
+  const onSubmit = (data: {
+    inputFile: HTMLInputElement;
+    inputTitle: HTMLInputElement;
+    inputSelect: HTMLSelectElement;
+    inputDate: HTMLInputElement;
+    inputStyle: HTMLInputElement;
+  }) => {
     console.log(data);
-    console.log(errors);
     reset();
 
-    const photo = data.inputFile as HTMLInputElement;
-    const title = (data.inputTitle as HTMLInputElement).value;
-    const select = (data.inputSelect as HTMLSelectElement).value;
-    const date = (data.inputDate as HTMLInputElement).value;
-    const style = data.inputStyle as HTMLInputElement;
+    const photo = data.inputFile;
+    console.log('data.inputFile = ', data.inputFile);
+    const title = data.inputTitle.value;
+    console.log('data.inputTitle = ', data.inputTitle);
+    const select = data.inputSelect.value;
+    console.log('data.inputSelect = ', data.inputSelect);
+    const date = data.inputDate.value;
+    console.log('data.inputDate = ', data.inputDate);
+    const style = data.inputStyle;
+    console.log('data.inputStyle = ', data.inputStyle);
 
     const card = {
       photo: URL.createObjectURL(((photo as HTMLInputElement).files as FileList)[0]),
       title: title,
       select: select,
       date: date,
-      style: style ? style : '',
+      style: style,
     };
-    setStateForm({ saleList: [...stateForm.saleList, card] });
-    setStateForm({ modal: true });
+    setStateForm({ ...stateForm, card });
+    setStateModal(true);
     setTimeout(() => {
-      setStateForm({ modal: false });
+      setStateModal(false);
     }, 5000);
   };
 
@@ -153,11 +165,11 @@ export function Form() {
         </fieldset>
       </form>
       <div className="output">
-        {stateForm.saleList.map((item: myCard, i: number) => (
+        {/* {stateForm.map((item: myCard, i: number) => (
           <SalePhotoCard key={i} item={item} />
-        ))}
+        ))} */}
       </div>
-      {stateForm.modal === true ? <Modal /> : null}
+      {stateModal === true ? <Modal /> : null}
     </div>
   );
 }
