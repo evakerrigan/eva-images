@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import './PageWrapper.scss';
 import { Header } from '../Header/Header';
 
@@ -7,13 +7,11 @@ export type PageWrapperProps = {
   content: ReactElement;
 };
 
-export class PageWrapper extends Component<PageWrapperProps> {
-  render() {
-    return (
-      <>
-        <Header title={this.props.title} />
-        {this.props.content}
-      </>
-    );
-  }
+export function PageWrapper({ title, content }: PageWrapperProps) {
+  return (
+    <>
+      <Header title={title} />
+      {content}
+    </>
+  );
 }
