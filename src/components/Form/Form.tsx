@@ -40,11 +40,7 @@ export function Form() {
       style: data.inputStyle,
     };
 
-    console.log('card = ', card);
-
     setStateForm({ ...stateForm, saleList: [...stateForm.saleList, card] });
-
-    console.log('stateForm = ', stateForm);
 
     setStateModal(true);
     setTimeout(() => {
