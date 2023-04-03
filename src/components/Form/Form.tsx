@@ -1,15 +1,23 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import './Form.scss';
 import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
 import { Modal } from '../Modal/Modal';
 
-interface myState {
-  saleList: myCard[];
-}
-
 interface myModal {
   modal: boolean;
+}
+
+// interface myInput {
+//   inputFile: FileList;
+//   inputTitle: HTMLInputElement;
+//   inputSelect: HTMLSelectElement;
+//   inputDate: HTMLInputElement;
+//   inputStyle: HTMLInputElement;
+// }
+
+interface myState {
+  saleList: myCard[];
 }
 
 interface myCard {
@@ -21,16 +29,9 @@ interface myCard {
   agree?: boolean;
 }
 
-// interface FieldValues {
-//   inputFile: FileList;
-//   inputTitle: HTMLInputElement;
-//   inputSelect: HTMLSelectElement;
-//   inputDate: HTMLInputElement;
-//   inputStyle: HTMLInputElement;
-// }
-
 export function Form() {
-  const [stateForm, setStateForm] = useState();
+  const [stateForm, setStateForm] = useState<myState>({ saleList: [] });
+
   const [stateModal, setStateModal] = useState(false);
 
   const {
@@ -43,7 +44,7 @@ export function Form() {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
 
-    const card = {
+    const card: myCard = {
       photo: URL.createObjectURL(data.inputFile[0]),
       title: data.inputTitle,
       select: data.inputSelect,
@@ -53,7 +54,9 @@ export function Form() {
 
     console.log('card = ', card);
 
-    setStateForm(card);
+    setStateForm({ ...stateForm, saleList: { ...stateForm.saleList, ...card } });
+
+    console.log('stateForm = ', stateForm);
 
     setStateModal(true);
     setTimeout(() => {
@@ -90,7 +93,7 @@ export function Form() {
             {...register('inputSelect', { required: true })}
             className="input input-select stock"
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               Select Stock
             </option>
             <option value="adobe">Adobe</option>
