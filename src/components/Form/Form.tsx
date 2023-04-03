@@ -1,27 +1,36 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import './Form.scss';
 import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
 import { Modal } from '../Modal/Modal';
 
-export type typePropsElseBimbo = {
-  [key: string]: never;
-};
+// export type typePropsElseBimbo = {
+//   [key: string]: never;
+// };
 
 // interface myState {
 //   saleList: myCard[];
 // }
-interface myModal {
-  modal: boolean;
-}
 
-interface myCard {
-  photo: string;
-  title: string;
-  select: string;
-  date: string;
-  style: string;
-  agree?: boolean;
+// interface myModal {
+//   modal: boolean;
+// }
+
+// interface myCard {
+//   photo: string;
+//   title: string;
+//   select: string;
+//   date: string;
+//   style: string;
+//   agree?: boolean;
+// }
+
+interface myInput {
+  inputFile: HTMLInputElement;
+  inputTitle: HTMLInputElement;
+  inputSelect: HTMLSelectElement;
+  inputDate: HTMLInputElement;
+  inputStyle: HTMLInputElement;
 }
 
 export function Form() {
@@ -35,39 +44,26 @@ export function Form() {
     reset,
   } = useForm();
 
-  const onSubmit = (data: {
-    inputFile: HTMLInputElement;
-    inputTitle: HTMLInputElement;
-    inputSelect: HTMLSelectElement;
-    inputDate: HTMLInputElement;
-    inputStyle: HTMLInputElement;
-  }) => {
+  const onSubmit: SubmitHandler<myInput> = (data) => {
     console.log(data);
-    reset();
-
-    const photo = data.inputFile;
-    console.log('data.inputFile = ', data.inputFile);
-    const title = data.inputTitle.value;
-    console.log('data.inputTitle = ', data.inputTitle);
-    const select = data.inputSelect.value;
-    console.log('data.inputSelect = ', data.inputSelect);
-    const date = data.inputDate.value;
-    console.log('data.inputDate = ', data.inputDate);
-    const style = data.inputStyle;
-    console.log('data.inputStyle = ', data.inputStyle);
 
     const card = {
-      photo: URL.createObjectURL(((photo as HTMLInputElement).files as FileList)[0]),
-      title: title,
-      select: select,
-      date: date,
-      style: style,
+      photo: URL.createObjectURL(data.inputFile[0]),
+      title: data.inputTitle,
+      select: data.inputSelect,
+      date: data.inputDate,
+      style: data.inputStyle,
     };
-    setStateForm({ ...stateForm, card });
+
+    console.log('card = ', card);
+
+    setStateForm(...stateForm, card);
+
     setStateModal(true);
     setTimeout(() => {
       setStateModal(false);
     }, 5000);
+    // reset();
   };
 
   return (
@@ -119,7 +115,6 @@ export function Form() {
                 type="radio"
                 {...register('inputStyle', { required: true })}
                 id="one"
-                name="style"
                 value="lifestyle"
                 className="input input-radio choice"
               />
@@ -130,7 +125,6 @@ export function Form() {
                 type="radio"
                 {...register('inputStyle', { required: true })}
                 id="two"
-                name="style"
                 value="studio"
                 className="input input-radio choice"
               />
