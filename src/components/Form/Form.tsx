@@ -30,8 +30,6 @@ export function Form() {
   } = useForm();
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
-
     const card: myCard = {
       photo: URL.createObjectURL(data.inputFile[0]),
       title: data.inputTitle,
