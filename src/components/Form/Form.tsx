@@ -1,37 +1,33 @@
-import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import React, { SetStateAction, useState } from 'react';
+import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import './Form.scss';
 import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
 import { Modal } from '../Modal/Modal';
 
-// export type typePropsElseBimbo = {
-//   [key: string]: never;
-// };
-
-// interface myState {
-//   saleList: myCard[];
-// }
-
-// interface myModal {
-//   modal: boolean;
-// }
-
-// interface myCard {
-//   photo: string;
-//   title: string;
-//   select: string;
-//   date: string;
-//   style: string;
-//   agree?: boolean;
-// }
-
-interface myInput {
-  inputFile: HTMLInputElement;
-  inputTitle: HTMLInputElement;
-  inputSelect: HTMLSelectElement;
-  inputDate: HTMLInputElement;
-  inputStyle: HTMLInputElement;
+interface myState {
+  saleList: myCard[];
 }
+
+interface myModal {
+  modal: boolean;
+}
+
+interface myCard {
+  photo: string;
+  title: string;
+  select: string;
+  date: string;
+  style: string;
+  agree?: boolean;
+}
+
+// interface FieldValues {
+//   inputFile: FileList;
+//   inputTitle: HTMLInputElement;
+//   inputSelect: HTMLSelectElement;
+//   inputDate: HTMLInputElement;
+//   inputStyle: HTMLInputElement;
+// }
 
 export function Form() {
   const [stateForm, setStateForm] = useState();
@@ -44,7 +40,7 @@ export function Form() {
     reset,
   } = useForm();
 
-  const onSubmit: SubmitHandler<myInput> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
 
     const card = {
@@ -57,13 +53,13 @@ export function Form() {
 
     console.log('card = ', card);
 
-    setStateForm(...stateForm, card);
+    setStateForm(card);
 
     setStateModal(true);
     setTimeout(() => {
       setStateModal(false);
     }, 5000);
-    // reset();
+    reset();
   };
 
   return (
