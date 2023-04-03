@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Search.scss';
 
 export function Search() {
-  const [search, setSearch] = useState(localStorage.getItem('inputValue') || '');
+  const refSearch = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    localStorage.setItem('inputValue', search);
-  }, [search]);
-
-  const handleOnChange = (event: { target: { value: string } }) => {
-    setSearch(event.target.value);
-  };
+    const inputValue = refSearch.current;
+    if (inputValue) {
+      inputValue.value = localStorage.getItem('inputValue') || '';
+    }
+    return () => localStorage.setItem('inputValue', inputValue?.value || '');
+  }, []);
 
   return (
     <input
       className="header-input"
       placeholder="Search for ..."
       type="text"
-      value={search}
-      onChange={handleOnChange}
+      ref={refSearch}
     ></input>
   );
 }
