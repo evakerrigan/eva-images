@@ -4,18 +4,6 @@ import './Form.scss';
 import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
 import { Modal } from '../Modal/Modal';
 
-interface myModal {
-  modal: boolean;
-}
-
-// interface myInput {
-//   inputFile: FileList;
-//   inputTitle: HTMLInputElement;
-//   inputSelect: HTMLSelectElement;
-//   inputDate: HTMLInputElement;
-//   inputStyle: HTMLInputElement;
-// }
-
 interface myState {
   saleList: myCard[];
 }
@@ -54,7 +42,7 @@ export function Form() {
 
     console.log('card = ', card);
 
-    setStateForm({ ...stateForm, saleList: { ...stateForm.saleList, ...card } });
+    setStateForm({ ...stateForm, saleList: [...stateForm.saleList, card] });
 
     console.log('stateForm = ', stateForm);
 
@@ -158,9 +146,9 @@ export function Form() {
         </fieldset>
       </form>
       <div className="output">
-        {/* {stateForm.map((item: myCard, i: number) => (
+        {stateForm.saleList.map((item: myCard, i: number) => (
           <SalePhotoCard key={i} item={item} />
-        ))} */}
+        ))}
       </div>
       {stateModal === true ? <Modal /> : null}
     </div>
