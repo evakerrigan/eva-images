@@ -1,40 +1,25 @@
 import React, { useState } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import './Form.scss';
 import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
 import { Modal } from '../Modal/Modal';
 
-// export type typePropsElseBimbo = {
-//   [key: string]: never;
-// };
+interface myState {
+  saleList: myCard[];
+}
 
-// interface myState {
-//   saleList: myCard[];
-// }
-
-// interface myModal {
-//   modal: boolean;
-// }
-
-// interface myCard {
-//   photo: string;
-//   title: string;
-//   select: string;
-//   date: string;
-//   style: string;
-//   agree?: boolean;
-// }
-
-interface myInput {
-  inputFile: HTMLInputElement;
-  inputTitle: HTMLInputElement;
-  inputSelect: HTMLSelectElement;
-  inputDate: HTMLInputElement;
-  inputStyle: HTMLInputElement;
+interface myCard {
+  photo: string;
+  title: string;
+  select: string;
+  date: string;
+  style: string;
+  agree?: boolean;
 }
 
 export function Form() {
-  const [stateForm, setStateForm] = useState();
+  const [stateForm, setStateForm] = useState<myState>({ saleList: [] });
+
   const [stateModal, setStateModal] = useState(false);
 
   const {
@@ -44,10 +29,10 @@ export function Form() {
     reset,
   } = useForm();
 
-  const onSubmit: SubmitHandler<myInput> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
 
-    const card = {
+    const card: myCard = {
       photo: URL.createObjectURL(data.inputFile[0]),
       title: data.inputTitle,
       select: data.inputSelect,
@@ -57,13 +42,15 @@ export function Form() {
 
     console.log('card = ', card);
 
-    setStateForm(...stateForm, card);
+    setStateForm({ ...stateForm, saleList: [...stateForm.saleList, card] });
+
+    console.log('stateForm = ', stateForm);
 
     setStateModal(true);
     setTimeout(() => {
       setStateModal(false);
     }, 5000);
-    // reset();
+    reset();
   };
 
   return (
@@ -94,7 +81,7 @@ export function Form() {
             {...register('inputSelect', { required: true })}
             className="input input-select stock"
           >
-            <option value="" selected disabled>
+            <option value="" disabled>
               Select Stock
             </option>
             <option value="adobe">Adobe</option>
@@ -159,9 +146,9 @@ export function Form() {
         </fieldset>
       </form>
       <div className="output">
-        {/* {stateForm.map((item: myCard, i: number) => (
+        {stateForm.saleList.map((item: myCard, i: number) => (
           <SalePhotoCard key={i} item={item} />
-        ))} */}
+        ))}
       </div>
       {stateModal === true ? <Modal /> : null}
     </div>
