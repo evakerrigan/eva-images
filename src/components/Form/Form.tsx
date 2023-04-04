@@ -54,20 +54,34 @@ export function Form() {
           <legend className="input-legend-title">Form for your:</legend>
           <input
             type="file"
-            {...register('inputFile', { required: true })}
+            {...register('inputFile', {
+              required: true,
+              validate: (value) =>
+                value[0].type === 'image/jpeg' || value[0].type === 'image/png' ? true : false,
+            })}
             accept="image/png, image/jpeg"
             className="input input-image file"
           />
-          <div>{errors?.inputFile && <p className="input-error">Нет картинки</p>}</div>
+          <div>
+            {errors?.inputFile && (
+              <p className="input-error">Нет фотографии, или фото не формата jpg/png</p>
+            )}
+          </div>
           <input
             type="text"
-            {...register('inputTitle', { required: true })}
+            {...register('inputTitle', {
+              required: true,
+              validate: (value) =>
+                value.length < 3 ? false : value[0] == value[0].toUpperCase() ? true : false,
+            })}
+            placeholder="Название фотографии"
             className="input input-text title"
           />
           <div>
             {errors?.inputTitle && (
               <p className="input-error">
-                Название фото должно содержать хотя бы 1 букву и должно начинаться с заглавной
+                Название фото должно содержать хотя бы 3 знака и должно начинаться с заглавной, если
+                начинается с буквы
               </p>
             )}
           </div>
@@ -75,9 +89,7 @@ export function Form() {
             {...register('inputSelect', { required: true })}
             className="input input-select stock"
           >
-            <option value="" disabled>
-              Select Stock
-            </option>
+            <option value="">- Select Stock -</option>
             <option value="adobe">Adobe</option>
             <option value="getty">Getty</option>
             <option value="offset">Offset</option>
