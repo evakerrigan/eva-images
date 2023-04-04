@@ -1,0 +1,245 @@
+[
+  {
+    "id": "1",
+    "title": "Child fun at blue",
+    "url": "image/cards/1.jpg",
+    "shops": ["adobe.com"],
+    "price": "80",
+    "stockurl": "https://stock.adobe.com/ru/images/child-boy-in-cafe-jumps-and-runs-on-pastel-blue-pillows-concept-about-problems-on-vacation-and-vacation-with-active-children/396219260?prev_url=detail",
+    "tags": ["child, fun, blue"]
+  },
+  {
+    "id": "2",
+    "title": "Women and horse",
+    "url": "image/cards/2.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/young-woman-walks-with-horse-across-field-meadow/472470015?prev_url=detail",
+    "tags": ["horse, young, woman, getting away from it all"]
+  },
+  {
+    "id": "3",
+    "title": "Girl and skate",
+    "url": "image/cards/3.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/happy-woman-on-skateboard-listen-to-phone/481022582?prev_url=detail",
+    "tags": ["girl, skate"]
+  },
+  {
+    "id": "4",
+    "title": "Teenager and music",
+    "url": "image/cards/4.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/young-man-teen-traveling-in-train-with-headphones/568330232?prev_url=detail",
+    "tags": ["man, music, travel"]
+  },
+  {
+    "id": "5",
+    "title": "Cat",
+    "url": "image/cards/5.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-and-red-ginger-cat-in-trailer-with-phone/469822814?prev_url=detail",
+    "tags": ["cat"]
+  },
+  {
+    "id": "6",
+    "title": "Boy",
+    "url": "image/cards/6.jpg",
+    "shops": [""],
+    "price": "",
+    "stockurl": "",
+    "tags": ["boy"]
+  },
+  {
+    "id": "7",
+    "title": "Online work",
+    "url": "image/cards/7.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-at-laptop-with-phone-working-near-trailer/469822799?prev_url=detail",
+    "tags": ["online work"]
+  },
+  {
+    "id": "8",
+    "title": "Women and skate",
+    "url": "image/cards/8.jpg",
+    "shops": ["mauritius-images.com"],
+    "price": "450",
+    "stockurl": "https://www.mauritius-images.com/en/asset/ME-PI-14577413_mauritius_images_bildnummer_14279334_young-woman-with-skateboard-detail",
+    "tags": ["skate"]
+  },
+  {
+    "id": "9",
+    "title": "Football",
+    "url": "image/cards/9.jpg",
+    "shops": ["adobe.com"],
+    "price": "80",
+    "stockurl": "https://stock.adobe.com/ru/images/lifestyle-of-two-children-and-soccer-ball-sitting-on-grass-laughing-and-talking-concept-about-childhood-sports-and-communication-of-preschool/396026924?prev_url=detail",
+    "tags": ["football"]
+  },
+  {
+    "id": "10",
+    "title": "",
+    "url": "image/cards/10.jpg",
+    "shops": [""],
+    "price": "",
+    "stockurl": "",
+    "tags": [""]
+  },
+  {
+    "id": "11",
+    "title": "",
+    "url": "image/cards/11.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/young-man-teenager-in-headphones-traveling-in-train-listen-music/568330247?prev_url=detail",
+    "tags": ["travel, teenager, man, music"]
+  },
+  {
+    "id": "12",
+    "title": "woman work online at laptop",
+    "url": "image/cards/12.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-study-with-laptop-near-trailer-outdoors/469822824?prev_url=detail",
+    "tags": ["laptop, online, woman"]
+  },
+  {
+    "id": "13",
+    "title": "father and soon eat apple",
+    "url": "image/cards/13.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/family-father-and-son-in-field-fatherhood/474298385?prev_url=detail",
+    "tags": ["apple, child, man, father"]
+  },
+  {
+    "id": "14",
+    "title": "woman online shopping at trailer travel",
+    "url": "image/cards/14.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-in-online-shopping-trailer-behind-laptop/469822825?prev_url=detail",
+    "tags": ["woman, trailer, online shopping, smartphon"]
+  },
+  {
+    "id": "15",
+    "title": "",
+    "url": "image/cards/15.jpg",
+    "shops": [""],
+    "price": "",
+    "stockurl": "",
+    "tags": [""]
+  },
+  {
+    "id": "16",
+    "title": "woman and horse",
+    "url": "image/cards/16.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/horse-and-woman-getting-away-from-it-all-lifestyle/472470032?prev_url=detail",
+    "tags": ["women, horse, happiness, freedom, love, nature"]
+  },
+  {
+    "id": "17",
+    "title": "woman drink coffee cap",
+    "url": "image/cards/17.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/beautiful-woman-drinking-coffee-in-door-of-trailer/469822813?prev_url=detail",
+    "tags": ["woman, coffee, cap, drink, trailer, door"]
+  },
+  {
+    "id": "18",
+    "title": "cat and woman at bed",
+    "url": "image/cards/18.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-and-ginger-cat-in-trailer-with-cup-of-coffee/469822789?prev_url=detail",
+    "tags": ["cat, woman"]
+  },
+  {
+    "id": "19",
+    "title": "Programmer work at train at travel notebook",
+    "url": "image/cards/19.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/young-teenage-man-with-glasses-travels-in-train-with-laptop/568330269?prev_url=detail",
+    "tags": ["man, train, teenager, online, online work, programmer, notebook"]
+  },
+  {
+    "id": "20",
+    "title": "woman eat shaverma and tallk at smartphone",
+    "url": "image/cards/20.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-eating-street-food-outdoors-and-talking-on-phone/478560158?prev_url=detail",
+    "tags": ["skate, woman, eat, smartphone"]
+  },
+  {
+    "id": "21",
+    "title": "boy eat berry",
+    "url": "image/cards/21.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/child-boy-kid-eat-raspberries-in-village/478560205?prev_url=detail",
+    "tags": ["boy? child, berry"]
+  },
+  {
+    "id": "22",
+    "title": "happy child boy toddler",
+    "url": "image/cards/22.jpg",
+    "shops": ["adobe.com"],
+    "price": "80",
+    "stockurl": "https://stock.adobe.com/ru/images/happy-child-boy-pissed-and-tired-of-lying-lounging-on-pink-bed-pillows-beach-tent-chaise-longue-lifestyle-on-vacation-sea/423809160?prev_url=detail",
+    "tags": ["boy, child, happy, pink"]
+  },
+  {
+    "id": "23",
+    "title": "happy woman and horse",
+    "url": "image/cards/23.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/horse-and-young-woman-getting-away-from-it-all/472470016?prev_url=detail",
+    "tags": ["woman, horse, happy"]
+  },
+  {
+    "id": "24",
+    "title": "skateboard woman unrecognizable",
+    "url": "image/cards/24.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/unrecognizable-person-on-skateboard-legs-in-sneakers-with-laces/481022593?prev_url=detail",
+    "tags": ["unrecognizable person, unrecognizable, skateboard, woman "]
+  },
+  {
+    "id": "25",
+    "title": "cap of coffee at summer",
+    "url": "image/cards/25.jpg",
+    "shops": ["adobe.com"],
+    "price": "80",
+    "stockurl": "https://stock.adobe.com/ru/images/a-white-cup-of-coffee-on-an-aquamarine-colored-tablecloth-bathed-in-sunlight/274506623?prev_url=detail",
+    "tags": ["cap, coffee"]
+  },
+  {
+    "id": "26",
+    "title": "woman and cat at bed in trailer",
+    "url": "image/cards/26.jpg",
+    "shops": ["adobe.com"],
+    "price": "250",
+    "stockurl": "https://stock.adobe.com/ru/images/woman-and-ginger-cat-in-trailer-with-laptop/469822786?prev_url=detail",
+    "tags": ["cat, trailer, travel, bed"]
+  },
+  {
+    "id": "27",
+    "title": "young woman eat foot at outdoor",
+    "url": "image/cards/27.jpg",
+    "shops": ["mauritius-images.com"],
+    "price": "450",
+    "stockurl": "https://www.mauritius-images.com/en/asset/ME-PI-14264917_mauritius_images_bildnummer_14161901_young-woman-chewing-street-food-outdoors-lifestyle",
+    "tags": ["food, outdoor, young, woman"]
+  }
+]

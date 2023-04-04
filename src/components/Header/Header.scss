@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Gurajada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ruthie&display=swap');
+
+.header {
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+  background-image: url('../../assets/image/header-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.header-overlay {
+  width: 100%;
+  height: 100%;
+  Background-image: url('../../assets/image/overlay.png');
+  opacity: 0.5;
+  position: static;
+  z-index: -1;
+}
+
+.header-dark-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #f1f1f1;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.header-logo-wrapper {
+  padding-top: 361px;
+}
+
+.header-dark-top {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.header-logo-link {
+  font-family: 'Gurajada', serif;
+  font-size: 45px;
+  line-height: 0.1;
+  font-weight: 500;
+  color: #fff;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  align-items: baseline;
+}
+
+h2.career {
+  font-family: 'Gurajada', serif;
+  font-size: 45px;
+  line-height: 0.1;
+  font-weight: 500;
+  color: #fff;
+}
+
+h2.name {
+  font-family: 'Ruthie', cursive;
+  font-size: 66px;
+  line-height: 0.1;
+  font-weight: 500;
+  color: #fff;
+}
+
+.header-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-item {
+  padding: 0 20px;
+}
+
+.header-link {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header-link:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.header-description {
+  font-size: 22px;
+  color: #fff;
+  font-style: italic;
+}
+
+.header-input {
+  font-size: 15px;
+  color: #000;
+  margin-top: 5vh;
+  padding: 10px;
+  width: 30vw;
+}
+
+.header-input:focus {
+  outline: 0;
+}
+
+@media (max-width: 600px) {
+  .header-description {
+    display: none;
+  }
+
+  .header-logo-link {
+    font-size: 35px;
+    line-height: 0;
+  }
+
+  .header-link {
+    font-size: 14px;
+  }
+
+  .header-item {
+    padding: 0 10px;
+  }
+
+  h2.name {
+    font-size: 50px;
+    line-height: 1;
+  }
+}
