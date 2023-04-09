@@ -8,8 +8,7 @@ interface IFetch {
 }
 
 const BASE_URL = 'https://eva-images-json-server.vercel.app/cards';
-// const useFetch = (query = localStorage.getItem('inputValue'), key = 'title') => {
-const useFetch = (query: string, key = 'title') => {
+const useFetch = (query = localStorage.getItem('inputValue'), key = 'title') => {
   const [status, setStatus] = useState<IFetch>({
     loading: false,
     data: [],
@@ -17,10 +16,8 @@ const useFetch = (query: string, key = 'title') => {
   });
 
   function fetchNow(BASE_URL: string) {
-    console.log('queryFetch в фетче  = ', query);
     const a = localStorage.getItem('inputValue') || '';
-    a === '' ? console.log('a в фетче = в поиске пусто') : console.log('a в фетче = ', a);
-    fetch(query ? `${BASE_URL}/?${key}_like=${a.length > 0 ? a : query}` : BASE_URL)
+    fetch(query ? `${BASE_URL}/?${key}_like=${isNaN(+query) ? a : query}` : BASE_URL)
       .then((res) => res.json())
       .then((res) => {
         setStatus({ loading: false, data: res, error: undefined });

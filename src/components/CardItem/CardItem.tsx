@@ -14,7 +14,6 @@ export interface Card {
 
 export type CardItemProps = {
   card: Card;
-  // setActive: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export function CardItem({ card }: CardItemProps) {
