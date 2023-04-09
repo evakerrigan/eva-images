@@ -3,7 +3,13 @@ import { NavLink } from 'react-router-dom';
 import { Search } from '../Search/Search';
 import './Header.scss';
 
-export function Header({ title }: { title: string }): JSX.Element {
+export function Header({
+  title,
+  setQuery,
+}: {
+  title: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+}): JSX.Element {
   return (
     <header className="header">
       <div className="header-overlay">
@@ -37,7 +43,7 @@ export function Header({ title }: { title: string }): JSX.Element {
               <div className="header-description">{title}</div>
             </div>
           </div>
-          <div className="wrapper">{title === 'Home' ? <Search /> : ' '}</div>
+          <div className="wrapper">{title === 'Home' ? <Search setQuery={setQuery} /> : ' '}</div>
           <div className="wrapper header-logo-wrapper">
             <div className="header-logo">
               <h2 className="career">Photographer</h2>

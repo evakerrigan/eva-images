@@ -1,23 +1,28 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import './Search.scss';
+import { useForm } from 'react-hook-form';
 
-export function Search() {
-  const refSearch = useRef<HTMLInputElement>(null);
-
+export function Search({ setQuery }: { setQuery: React.Dispatch<React.SetStateAction<string>> }) {
   useEffect(() => {
-    const inputValue = refSearch.current;
-    if (inputValue) {
-      inputValue.value = localStorage.getItem('inputValue') || '';
-    }
-    return () => localStorage.setItem('inputValue', inputValue?.value || '');
-  }, []);
+    return () => localStorage.setItem('inputValue', getValues().inputSearch || '');
+  });
+
+  const { register, handleSubmit, getValues } = useForm();
+
+  const onSubmit = () => {
+    console.log('getValues().inputSearch', getValues().inputSearch);
+    setQuery(getValues().inputSearch);
+  };
 
   return (
-    <input
-      className="header-input"
-      placeholder="Search for ..."
-      type="text"
-      ref={refSearch}
-    ></input>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        {...register('inputSearch')}
+        className="header-input"
+        placeholder="Search for ..."
+        type="search"
+        defaultValue={localStorage.getItem('inputValue') || ''}
+      ></input>
+    </form>
   );
 }
