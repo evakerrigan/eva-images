@@ -1,5 +1,5 @@
 import { Card } from 'components/CardItem/CardItem';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface IFetch {
   loading: boolean;
@@ -8,6 +8,7 @@ interface IFetch {
 }
 
 const BASE_URL = 'https://eva-images-json-server.vercel.app/cards';
+
 const useFetch = (query = localStorage.getItem('inputValue'), key = 'title') => {
   const [status, setStatus] = useState<IFetch>({
     loading: false,
@@ -15,20 +16,20 @@ const useFetch = (query = localStorage.getItem('inputValue'), key = 'title') => 
     error: undefined,
   });
 
-  function fetchNow(BASE_URL: string) {
+  const fetchNow = useCallback(() => {
     const a = localStorage.getItem('inputValue') || '';
     fetch(query ? `${BASE_URL}/?${key}_like=${isNaN(+query) ? a : query}` : BASE_URL)
       .then((res) => res.json())
       .then((res) => {
         setStatus({ loading: false, data: res, error: undefined });
       });
-  }
+  }, [key, query]);
 
   useEffect(() => {
     if (BASE_URL) {
-      fetchNow(BASE_URL);
+      fetchNow();
     }
-  }, [query]);
+  }, [fetchNow]);
 
   return { ...status, fetchNow };
 };
