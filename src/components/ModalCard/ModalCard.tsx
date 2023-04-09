@@ -14,13 +14,29 @@ export function ModalCard({
 }) {
   const { data } = useFetch(id, 'id');
   const card = data.find((el) => el.id === id) || '';
-  console.log('card', card);
+  console.log('card в модалке = ', card);
   return (
     <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        {/* {data.map((el) => ( */}
         <p>{(card as Card).title}</p>
-        {/* ))} */}
+
+        <div>
+          <img className="card-image" src={(card as Card).url} alt={(card as Card).title} />
+
+          <div className="card-sale-wrapper">
+            <div className="card-sale-price">
+              {(card as Card).price ? 'Buy at ' + (card as Card).price + '$' : ''}
+            </div>
+            <a
+              href={(card as Card).stockurl}
+              target="_blank"
+              className="card-sale-link"
+              rel="noreferrer"
+            >
+              {(card as Card).shops}
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
