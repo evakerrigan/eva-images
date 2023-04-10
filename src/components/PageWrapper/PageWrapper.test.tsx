@@ -7,7 +7,7 @@ import { AboutMe } from '../AboutMe/AboutMe';
 test('PageWrapper renders correctly', () => {
   render(
     <BrowserRouter>
-      <PageWrapper title="AboutMe" content={<AboutMe />} />
+      <PageWrapper setQuery={() => ''} title="AboutMe" content={<AboutMe />} />
     </BrowserRouter>
   );
   const textElement = screen.getByText('Photographer');

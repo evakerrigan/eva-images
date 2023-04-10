@@ -6,7 +6,7 @@ import { Header } from './Header';
 test('Header renders correctly', () => {
   render(
     <BrowserRouter>
-      <Header title="Home" />
+      <Header setQuery={() => ''} title="Home" />
     </BrowserRouter>
   );
   const textElement = screen.getByText('Kseniia Liubasova');
