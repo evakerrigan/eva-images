@@ -4,7 +4,10 @@ import { CardItem } from '../CardItem/CardItem';
 import useFetch from '../../hooks/useFetch';
 
 export function Home({ query }: { query: string }) {
-  const { data } = useFetch(query);
+  const { loading, data } = useFetch(query);
+
+  if (loading) return <div className="loading">Loading...</div>;
+
   return (
     <div className="wrapper">
       <h2>Home</h2>

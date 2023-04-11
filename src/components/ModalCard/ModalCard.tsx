@@ -12,8 +12,11 @@ export function ModalCard({
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
   id: string;
 }) {
-  const { data } = useFetch(id, 'id');
+  const { loading, data } = useFetch(id, 'id');
+  if (loading) return <div className="loading">Loading...</div>;
+
   const card = data.find((el) => el.id === id) || '';
+
   return (
     <div className={active ? 'modal active' : 'modal'} onClick={() => setActive(false)}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
