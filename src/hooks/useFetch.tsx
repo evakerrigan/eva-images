@@ -1,41 +1,27 @@
-import { Card } from 'components/CardItem/CardItem';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
-interface IFetch {
-  data: Card[];
-  error: undefined;
-}
-
-const BASE_URL = 'https://eva-images-json-server.vercel.app/cards';
-
-const useFetch = (query = localStorage.getItem('inputValue'), key = 'title') => {
-  const [status, setStatus] = useState<IFetch>({
-    data: [],
-    error: undefined,
-  });
-
+export function useFetch<T>(url: string, initialState: T) {
+  const [data, setData] = useState<T>(initialState);
   const [loading, setLoading] = useState(true);
 
-  const fetchNow = useCallback(() => {
-    const a = localStorage.getItem('inputValue') || '';
-    fetch(query ? `${BASE_URL}/?${key}_like=${isNaN(+query) ? a : query}` : BASE_URL)
-      .then((res) => {
-        setLoading(true);
-        return res.json();
-      })
-      .then((res) => {
-        setLoading(false);
-        setStatus({ data: res, error: undefined });
-      });
-  }, [key, query]);
-
   useEffect(() => {
-    if (BASE_URL) {
-      fetchNow();
+    if (!url) {
+      return;
     }
-  }, [fetchNow]);
 
-  return { ...status, loading, fetchNow };
-};
+    setLoading(true);
 
-export default useFetch;
+    fetch(url)
+      .then((data) => data.json())
+      .then(setData)
+      .then(() => setLoading(false))
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [url]);
+
+  return {
+    loading,
+    data,
+  };
+}

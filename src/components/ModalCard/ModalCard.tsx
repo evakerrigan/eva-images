@@ -1,6 +1,6 @@
 import React from 'react';
 import './ModalCard.scss';
-import useFetch from '../../hooks/useFetch';
+import { useFetch } from '../../hooks/useFetch';
 import { Card } from '../CardItem/CardItem';
 
 export function ModalCard({
@@ -12,7 +12,11 @@ export function ModalCard({
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
   id: string;
 }) {
-  const { loading, data } = useFetch(id, 'id');
+  const BASE_URL = 'https://eva-images-json-server.vercel.app/cards';
+  const url = `${BASE_URL}/?${id}`;
+
+  const { loading, data } = useFetch<Card[]>(url, [] as Card[]);
+
   if (loading) return <div className="loading">Loading...</div>;
 
   const card = data.find((el) => el.id === id) || '';

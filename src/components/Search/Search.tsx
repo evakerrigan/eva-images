@@ -10,6 +10,7 @@ export function Search({ setQuery }: { setQuery: React.Dispatch<React.SetStateAc
   const { register, handleSubmit, getValues } = useForm();
 
   const onSubmit = () => {
+    localStorage.setItem('inputValue', getValues().inputSearch || '');
     setQuery(getValues().inputSearch);
   };
 

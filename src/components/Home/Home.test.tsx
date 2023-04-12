@@ -1,6 +1,28 @@
 import React from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { Home } from './Home';
+import { Card } from 'components/CardItem/CardItem';
+
+import * as hooks from '../../hooks/useFetch';
+
+const mockCardItem = {
+  id: '2',
+  title: 'Women and horse',
+  url: 'image/cards/2.jpg',
+  shops: ['adobe.com'],
+  price: '250',
+  stockurl:
+    'https://stock.adobe.com/ru/images/young-woman-walks-with-horse-across-field-meadow/472470015?prev_url=detail',
+  tags: ['horse, young, woman, getting away from it all'],
+} as Card;
+
+jest.spyOn(hooks, 'useFetch').mockImplementation(() => {
+  return {
+    loading: false,
+    data: [mockCardItem],
+    error: '',
+  };
+});
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
