@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
@@ -9,7 +9,7 @@ global.fetch = jest.fn(() =>
   })
 ) as jest.Mock;
 
-test('App renders correctly', () => {
+test('App renders correctly', async () => {
   act(() => {
     render(
       <BrowserRouter>
@@ -17,6 +17,8 @@ test('App renders correctly', () => {
       </BrowserRouter>
     );
   });
-  const textElement = screen.getByText('Kseniia Liubasova');
-  expect(textElement).toBeInTheDocument();
+  waitFor(() => {
+    const textElement = screen.getByText('Kseniia Liubasova');
+    expect(textElement).toBeInTheDocument();
+  });
 });
