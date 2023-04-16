@@ -1,23 +1,18 @@
 import React from 'react';
-// import { store } from '../../store/store';
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
-import { setInput } from '../../store/slices/inputSlice';
-// import { InputPayload } from '../../store/slices/INPUT_REDUCER';
+import { searchSlice, selectorSearchInput } from '../../store/search';
+import { StoreState } from '../../store/types';
 
-export function Search({ setQuery }: { setQuery: React.Dispatch<React.SetStateAction<string>> }) {
-  // Вытаскиваем данные из хранилища. state – все состояние
-
-  const inputRedux = useSelector((state) => state.input.value) || '';
+export function Search() {
   // Возвращает метод store.dispatch() текущего хранилища
   const dispatch = useDispatch();
+  const inputRedux = useSelector<StoreState, string>(selectorSearchInput);
 
   const { register, handleSubmit, getValues } = useForm();
 
   const onSubmit = () => {
-    console.log('valueInput =', getValues().inputSearch);
-    dispatch(setInput(getValues().inputSearch));
-    setQuery(getValues().inputSearch);
+    dispatch(searchSlice.actions.setInput(getValues().inputSearch));
   };
 
   return (

@@ -1,40 +1,32 @@
 import React from 'react';
 import './Home.scss';
-import { Card, CardItem } from '../CardItem/CardItem';
-import { useFetch } from '../../hooks/useFetch';
+import { CardItem } from '../CardItem/CardItem';
+import { useSelector } from 'react-redux';
+import { StoreState } from '../../store/types';
+import { selectorSearchInput } from '../../store/search';
+import { useFetchCards } from '../../hooks/useFetchCards';
+import { selectorCards, selectorCardsLoading } from '../../store/cards';
+import { CardDto } from 'types/cards.dto';
 
-export function Home({ query }: { query: string }) {
-  const BASE_URL = 'https://eva-images-json-server.vercel.app/cards';
+export function Home() {
+  // Вытаскиваем данные из хранилища. state – все состояние
+  const inputRedux = useSelector<StoreState, string>(selectorSearchInput);
+  const dataCardsRedux = useSelector<StoreState, CardDto[]>(selectorCards);
+  const loadingCardsRedux = useSelector<StoreState, boolean>(selectorCardsLoading);
 
-  const inputLocalStorage = localStorage.getItem('inputValue') || '';
+  useFetchCards({ search: inputRedux });
 
-  if (inputLocalStorage === '') {
-  } else {
-    query = inputLocalStorage;
-  }
-
-  let url;
-
-  if (query) {
-    url = `${BASE_URL}/?title_like=${query}`;
-  } else {
-    url = BASE_URL;
-  }
-
-  const { loading, data } = useFetch<Card[]>(url, [] as Card[]);
-
-  if (loading) return <div className="loading">Loading...</div>;
+  if (loadingCardsRedux) return <div className="loading">Loading...</div>;
 
   return (
     <div className="wrapper">
       <h2>Home</h2>
       <ul className="card-list">
-        {data.length &&
-          data.map((card) => (
-            <li className="card-item" key={card.id}>
-              <CardItem card={card} />
-            </li>
-          ))}
+        {dataCardsRedux?.map((card) => (
+          <li className="card-item" key={card.id}>
+            <CardItem card={card} />
+          </li>
+        ))}
       </ul>
     </div>
   );

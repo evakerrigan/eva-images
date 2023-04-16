@@ -5,13 +5,12 @@ import { Header } from '../Header/Header';
 export type PageWrapperProps = {
   title: string;
   content: ReactElement;
-  setQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export function PageWrapper({ title, content, setQuery }: PageWrapperProps) {
+export function PageWrapper({ title, content }: PageWrapperProps) {
   return (
     <>
-      <Header setQuery={setQuery} title={title} />
+      <Header title={title} />
       {content}
     </>
   );
