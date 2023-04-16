@@ -1,4 +1,4 @@
-import {SearchState} from './search';
+import { CardsState } from './cards';
+import { SearchState } from './search';
 
-export interface StoreState extends SearchState {
-}
+export interface StoreState extends SearchState, CardsState {}
