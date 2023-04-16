@@ -1,27 +1,25 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Home.scss';
-import { Card, CardItem } from '../CardItem/CardItem';
-import { useFetch } from '../../hooks/useFetch';
+import {Card, CardItem} from '../CardItem/CardItem';
+import {useFetch} from '../../hooks/useFetch';
+import {useSelector} from 'react-redux';
+import {StoreState} from '../../store/types';
+import {selectorSearchInput} from '../../store/search';
 
-export function Home({ query }: { query: string }) {
+export function Home() {
   const BASE_URL = 'https://eva-images-json-server.vercel.app/cards';
 
   const inputLocalStorage = localStorage.getItem('inputValue') || '';
+  // Вытаскиваем данные из хранилища. state – все состояние
+  const inputRedux = useSelector<StoreState, string>(selectorSearchInput);
+  let url = '';
 
-  if (inputLocalStorage === '') {
-  } else {
-    query = inputLocalStorage;
-  }
-
-  let url;
-
-  if (query) {
-    url = `${BASE_URL}/?title_like=${query}`;
+  if (inputRedux) {
+    url = `${BASE_URL}/?title_like=${inputRedux}`;
   } else {
     url = BASE_URL;
   }
-
-  const { loading, data } = useFetch<Card[]>(url, [] as Card[]);
+  const {loading, data} = useFetch<Card[]>(url, [] as Card[]);
 
   if (loading) return <div className="loading">Loading...</div>;
 
