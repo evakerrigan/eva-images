@@ -1,15 +1,14 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Search } from '../Search/Search';
+import {NavLink} from 'react-router-dom';
+import {Search} from '../Search/Search';
 import './Header.scss';
 
-export function Header({
-  title,
-  setQuery,
-}: {
-  title: string;
-  setQuery: React.Dispatch<React.SetStateAction<string>>;
-}): JSX.Element {
+interface HeaderProps {
+  title: string
+}
+
+// JSX.Element можно и не писать TS сам понимает что вернёт ф-я
+export function Header({title}: HeaderProps): JSX.Element {
   return (
     <header className="header">
       <div className="header-overlay">
@@ -43,7 +42,7 @@ export function Header({
               <div className="header-description">{title}</div>
             </div>
           </div>
-          <div className="wrapper">{title === 'Home' ? <Search setQuery={setQuery} /> : ' '}</div>
+          <div className="wrapper">{title === 'Home' ? <Search /> : ' '}</div>
           <div className="wrapper header-logo-wrapper">
             <div className="header-logo">
               <h2 className="career">Photographer</h2>

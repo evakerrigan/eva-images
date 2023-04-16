@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react';
-import './Search.scss';
+import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector, useDispatch } from 'react-redux';
+import { searchSlice, selectorSearchInput } from '../../store/search';
+import { StoreState } from '../../store/types';
 
-export function Search({ setQuery }: { setQuery: React.Dispatch<React.SetStateAction<string>> }) {
-  useEffect(() => {
-    return () => localStorage.setItem('inputValue', getValues().inputSearch || '');
-  });
+export function Search() {
+  // Возвращает метод store.dispatch() текущего хранилища
+  const dispatch = useDispatch();
+  const inputRedux = useSelector<StoreState, string>(selectorSearchInput);
 
   const { register, handleSubmit, getValues } = useForm();
 
   const onSubmit = () => {
-    localStorage.setItem('inputValue', getValues().inputSearch || '');
-    setQuery(getValues().inputSearch);
+    dispatch(searchSlice.actions.setInput(getValues().inputSearch));
   };
 
   return (
@@ -21,7 +22,7 @@ export function Search({ setQuery }: { setQuery: React.Dispatch<React.SetStateAc
         className="header-input"
         placeholder="Search for ..."
         type="search"
-        defaultValue={localStorage.getItem('inputValue') || ''}
+        defaultValue={inputRedux}
       ></input>
     </form>
   );

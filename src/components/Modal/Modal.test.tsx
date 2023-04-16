@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Card } from '../CardItem/CardItem';
 import { Modal } from './Modal';
-
 import * as hooks from '../../hooks/useFetch';
 
 const mockCardItem = {
