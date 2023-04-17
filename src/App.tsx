@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Home } from './components/Home/Home';
@@ -12,30 +12,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route
-          index
-          element={
-            <PageWrapper title="Home" content={<Home />} />
-          }
-        />
-        <Route
-          path="/"
-          element={
-            <PageWrapper title="Home" content={<Home />} />
-          }
-        />
-        <Route
-          path="/about-me"
-          element={<PageWrapper title="AboutMe" content={<AboutMe />} />}
-        />
-        <Route
-          path="/notfound"
-          element={<PageWrapper title="NotFound" content={<NotFound />} />}
-        />
-        <Route
-          path="/form"
-          element={<PageWrapper title="Form" content={<Form />} />}
-        />
+        <Route index element={<PageWrapper title="Home" content={<Home />} />} />
+        <Route path="/" element={<PageWrapper title="Home" content={<Home />} />} />
+        <Route path="/about-me" element={<PageWrapper title="AboutMe" content={<AboutMe />} />} />
+        <Route path="/notfound" element={<PageWrapper title="NotFound" content={<NotFound />} />} />
+        <Route path="/form" element={<PageWrapper title="Form" content={<Form />} />} />
         <Route path="*" element={<Navigate to="/notfound" replace />} />
       </Routes>
       <Footer />
