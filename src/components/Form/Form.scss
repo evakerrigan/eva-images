@@ -1,0 +1,105 @@
+.input-form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px auto 20px auto;
+  color: #888;
+  justify-content: center;
+}
+.input.input-image {
+  padding: 0;
+}
+
+.input {
+  display: block;
+  width: 80%;
+  margin: 30px 10% 0 10%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input-radio {
+  width: 10px;
+  margin: 2px 10px 0 10%;
+  transform: scale(1.5);
+}
+
+.input-checkbox {
+  width: 10px;
+  margin: 2px 10px 0 11%;
+}
+
+.input-fieldset {
+  width: 500px;
+}
+
+.input-legend-title {
+  margin: 0 10px 10px 10px;
+}
+
+.input-legend {
+  margin: 20px 10% 20px 10%;
+}
+
+.input-checkbox {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.form-button {
+  cursor: pointer;
+  margin: 0 10% 10px 0;
+  padding: 10px 30px;
+  background-color: #888;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
+.form-button:hover {
+  background-color: #666;
+}
+
+.form-button:active {
+  background-color: #444;
+}
+
+.output {
+  padding: 20px 10px;
+  margin: 20px 0;
+  color: #888;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.input-error {
+  color: red;
+  margin: 0 10px 30px 10%;
+}
+.input-modal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: green;
+  color: #fff;
+  padding: 40px;
+}
+.input-modal.active {
+  display: block;
+}
+.input-button-wrapper  {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0 0 0;
+}
+@media (max-width: 500px) {
+  .input-fieldset {
+    width: 90%;
+}
+}
