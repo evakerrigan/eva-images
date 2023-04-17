@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
 import './CardItem.scss';
 import { ModalCard } from '../ModalCard/ModalCard';
-
-export interface Card {
-  id?: string;
-  title?: string;
-  url?: string;
-  shops?: string[];
-  price?: string;
-  stockurl?: string;
-  tags?: string[];
-}
+import { CardDto } from '../../types/cards.dto';
 
 export type CardItemProps = {
-  card: Card;
+  card: CardDto;
 };
 
 export function CardItem({ card }: CardItemProps) {
