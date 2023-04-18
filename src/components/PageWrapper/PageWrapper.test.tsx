@@ -8,7 +8,7 @@ test('PageWrapper renders correctly', () => {
   act(() => {
     render(
       <BrowserRouter>
-        <PageWrapper setQuery={() => ''} title="AboutMe" content={<AboutMe />} />
+        <PageWrapper title="AboutMe" content={<AboutMe />} />
       </BrowserRouter>
     );
   });

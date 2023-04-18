@@ -3,6 +3,16 @@ import './CardItem.scss';
 import { ModalCard } from '../ModalCard/ModalCard';
 import { CardDto } from '../../types/cards.dto';
 
+export interface Card {
+  id?: string;
+  title?: string;
+  url?: string;
+  shops?: string[];
+  price?: string;
+  stockurl?: string;
+  tags?: string[];
+}
+
 export type CardItemProps = {
   card: CardDto;
 };
