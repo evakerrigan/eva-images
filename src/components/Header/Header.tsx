@@ -6,8 +6,6 @@ import './Header.scss';
 interface HeaderProps {
   title: string;
 }
-
-// JSX.Element можно и не писать TS сам понимает что вернёт ф-я
 export function Header({ title }: HeaderProps): JSX.Element {
   return (
     <header className="header">

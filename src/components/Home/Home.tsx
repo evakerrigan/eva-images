@@ -9,7 +9,6 @@ import { selectorCards, selectorCardsLoading } from '../../store/cards';
 import { CardDto } from 'types/cards.dto';
 
 export function Home() {
-  // Вытаскиваем данные из хранилища. state – все состояние
   const inputRedux = useSelector<StoreState, string>(selectorSearchInput);
   const dataCardsRedux = useSelector<StoreState, CardDto[]>(selectorCards);
   const loadingCardsRedux = useSelector<StoreState, boolean>(selectorCardsLoading);
