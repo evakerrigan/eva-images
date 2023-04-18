@@ -3,10 +3,10 @@ import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import './Form.scss';
 import { SalePhotoCard } from '../SalePhotoCard/SalePhotoCard';
 import { Modal } from '../Modal/Modal';
-
-interface myState {
-  saleList: myCard[];
-}
+import { formSlice, selectorForm } from '../../store/form';
+import { useDispatch, useSelector } from 'react-redux';
+import { StoreState } from '../../store/types';
+import { FormCard } from 'store/form/form.types';
 
 interface myCard {
   photo: string;
@@ -18,7 +18,7 @@ interface myCard {
 }
 
 export function Form() {
-  const [stateForm, setStateForm] = useState<myState>({ saleList: [] });
+  const dispatch = useDispatch();
 
   const [stateModal, setStateModal] = useState(false);
 
@@ -38,7 +38,7 @@ export function Form() {
       style: data.inputStyle,
     };
 
-    setStateForm({ ...stateForm, saleList: [...stateForm.saleList, card] });
+    dispatch(formSlice.actions.setForms(card));
 
     setStateModal(true);
     setTimeout(() => {
@@ -46,6 +46,8 @@ export function Form() {
     }, 5000);
     reset();
   };
+
+  const dataFormRedux = useSelector<StoreState, FormCard[]>(selectorForm);
 
   return (
     <div className="wrapper">
@@ -152,7 +154,7 @@ export function Form() {
         </fieldset>
       </form>
       <div className="output">
-        {stateForm.saleList.map((item: myCard, i: number) => (
+        {dataFormRedux.map((item: myCard, i: number) => (
           <SalePhotoCard key={i} item={item} />
         ))}
       </div>

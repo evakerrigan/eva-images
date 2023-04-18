@@ -5,7 +5,6 @@ import { searchSlice, selectorSearchInput } from '../../store/search';
 import { StoreState } from '../../store/types';
 
 export function Search() {
-  // Возвращает метод store.dispatch() текущего хранилища
   const dispatch = useDispatch();
   const inputRedux = useSelector<StoreState, string>(selectorSearchInput);
 

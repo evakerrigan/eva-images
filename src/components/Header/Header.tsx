@@ -1,14 +1,12 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-import {Search} from '../Search/Search';
+import { NavLink } from 'react-router-dom';
+import { Search } from '../Search/Search';
 import './Header.scss';
 
 interface HeaderProps {
-  title: string
+  title: string;
 }
-
-// JSX.Element можно и не писать TS сам понимает что вернёт ф-я
-export function Header({title}: HeaderProps): JSX.Element {
+export function Header({ title }: HeaderProps): JSX.Element {
   return (
     <header className="header">
       <div className="header-overlay">

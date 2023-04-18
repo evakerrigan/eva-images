@@ -10,8 +10,8 @@ const BASE_URL = 'https://eva-images-json-server.vercel.app/cards';
 export const useFetchCards = ({ search }: UseFetchCardsParams) => {
   const dispatch = useDispatch();
 
-  let url = '';
   useEffect(() => {
+    let url = '';
     if (search) {
       url = `${BASE_URL}/?title_like=${search}`;
     } else {
@@ -27,5 +27,5 @@ export const useFetchCards = ({ search }: UseFetchCardsParams) => {
       .finally(() => {
         dispatch(cardsSlice.actions.stopLoading());
       });
-  }, [search]);
+  }, [dispatch, search]);
 };
