@@ -1,13 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { StoreState } from './types';
+// import { StoreState } from './types';
 import { searchSlice } from './search';
-import { cardsSlice } from './cards';
 import { formSlice } from './form';
+import { cardsApi } from './api/rtk-query';
 
-export const store = configureStore<StoreState>({
+export const store = configureStore({
   reducer: {
     search: searchSlice.reducer,
-    cardsState: cardsSlice.reducer,
+    [cardsApi.reducerPath]: cardsApi.reducer,
     formState: formSlice.reducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(cardsApi.middleware),
 });
