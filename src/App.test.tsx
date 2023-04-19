@@ -2,6 +2,8 @@ import React from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -13,7 +15,9 @@ test('App renders correctly', async () => {
   act(() => {
     render(
       <BrowserRouter>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     );
   });

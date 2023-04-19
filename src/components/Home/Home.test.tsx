@@ -2,6 +2,8 @@ import React from 'react';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { Home } from './Home';
 import { Card } from '../CardItem/CardItem';
+import { Provider } from 'react-redux';
+import { store } from '../../store/store';
 
 import * as hooks from '../../hooks/useFetch';
 
@@ -32,7 +34,11 @@ global.fetch = jest.fn(() =>
 
 test('Home renders correctly', async () => {
   act(() => {
-    render(<Home />);
+    render(
+      <Provider store={store}>
+        <Home />
+      </Provider>
+    );
   });
   await waitFor(() => {
     const textElement = screen.getByText('Home');
@@ -43,7 +49,11 @@ test('Home renders correctly', async () => {
 describe('CardList renders correctly', () => {
   it('renders Card', () => {
     act(() => {
-      render(<Home />);
+      render(
+        <Provider store={store}>
+          <Home />
+        </Provider>
+      );
     });
     waitFor(() => {
       const images = screen.getAllByRole('img');
