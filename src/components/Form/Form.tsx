@@ -149,7 +149,9 @@ export function Form() {
           </div>
 
           <div className="input-button-wrapper">
-            <input type="submit" className="form-button" />
+            <button type="submit" className="form-button">
+              Send
+            </button>
           </div>
         </fieldset>
       </form>
