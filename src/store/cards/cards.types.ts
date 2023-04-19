@@ -1,9 +1,5 @@
 import { CardDto } from '../../types/cards.dto';
 
-// export interface CardsState {
-//   cards: CardDto[];
-// }
-
 export interface CardsState {
   cards: CardDto[];
   cardsApi: {
