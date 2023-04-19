@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 import { Card } from '../CardItem/CardItem';
 import { Modal } from './Modal';
 import * as hooks from '../../hooks/useFetch';
+import { Provider } from 'react-redux';
+import { store } from '../../store/store';
 
 const mockCardItem = {
   id: '2',
@@ -30,7 +32,11 @@ global.fetch = jest.fn(() =>
 ) as jest.Mock;
 
 test('Modal renders correctly', () => {
-  render(<Modal />);
+  render(
+    <Provider store={store}>
+      <Modal />
+    </Provider>
+  );
   const textElement = screen.getByText('Your photo has been sent for sale !');
   expect(textElement).toBeInTheDocument();
 });
