@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import { StoreState } from './types';
 import { searchSlice } from './search';
 import { formSlice } from './form';
 import { cardsApi } from './api/rtk-query';
