@@ -6,13 +6,14 @@ import { StoreState } from '../../store/types';
 import { selectorSearchInput } from '../../store/search';
 import { useFetchCardsQuery } from '../../store/api/rtk-query';
 import { CardDto } from 'types/cards.dto';
+import { Loader } from '../Loader/Loader';
 
 export function Home() {
   const inputRedux = useSelector<StoreState, string>(selectorSearchInput);
 
   const { data: dataCardsRedux, isLoading } = useFetchCardsQuery(inputRedux);
 
-  if (isLoading) return <div className="loading">Loading...</div>;
+  if (isLoading) return <Loader />;
 
   return (
     <div className="wrapper">
