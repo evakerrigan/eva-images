@@ -17,14 +17,6 @@ export function Footer() {
             </a>
           </div>
           <div className="footer__year">2023</div>
-          <div className="footer__inner-right">
-            <a
-              href="https://rs.school/js/"
-              className="footer__link-school"
-              target="_blank"
-              rel="noreferrer"
-            ></a>
-          </div>
         </div>
       </div>
     </footer>

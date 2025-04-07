@@ -1,7 +1,7 @@
 .footer {
   border-top: 1px solid #777;
   padding: 30px 0 30px 0;
-  box-shadow: 0px 2px 35px 14px rgba(13,13,13,.04);
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
   color: #777;
   margin-top: 60px;
 }
@@ -13,7 +13,8 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.footer__inner-left, .footer__inner-right {
+.footer__inner-left,
+.footer__inner-right {
   display: flex;
   flex-direction: column;
   width: 33%;
@@ -22,7 +23,7 @@
   width: 33%;
   text-align: center;
 }
-.footer__inner-left{
+.footer__inner-left {
   align-items: flex-start;
 }
 .footer__inner-right {
@@ -30,7 +31,7 @@
 }
 .footer__link {
   position: relative;
-  padding: 10px 0 10px 35px;  
+  padding: 10px 0 10px 35px;
   font-size: 20px;
   color: #777;
 }
@@ -39,17 +40,10 @@
   top: 11px;
   left: 0px;
   display: block;
-  content: "";
+  content: '';
   width: 29px;
   height: 29px;
   background-image: url(../../assets/image/github.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.footer__link-school {
-  width: 90px;
-  height: 34px;
-  background-image: url(../../assets/image/rsschool-js-logo.webp);
   background-size: contain;
   background-repeat: no-repeat;
 }
