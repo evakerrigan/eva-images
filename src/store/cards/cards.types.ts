@@ -1,11 +1,10 @@
 import { CardDto } from '../../types/cards.dto';
 
-// export interface CardsState {
-//   cards: CardDto[];
-// }
-
 export interface CardsState {
-  cards: CardDto[];
+  cardsState: {
+    cards: CardDto[];
+    loading?: boolean;
+  };
   cardsApi: {
     queries: unknown;
     mutations: unknown;
