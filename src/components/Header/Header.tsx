@@ -30,11 +30,11 @@ export function Header({ title }: HeaderProps): JSX.Element {
                       About me
                     </NavLink>
                   </li>
-                  <li className="header-item">
+                  {/* <li className="header-item">
                     <NavLink to={'/form'} className="header-link">
                       Form
                     </NavLink>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
               <div className="header-description">{title}</div>

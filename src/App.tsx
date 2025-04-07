@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={<PageWrapper title="Home" content={<Home />} />} />
         <Route path="/about-me" element={<PageWrapper title="AboutMe" content={<AboutMe />} />} />
         <Route path="/notfound" element={<PageWrapper title="NotFound" content={<NotFound />} />} />
-        <Route path="/form" element={<PageWrapper title="Form" content={<Form />} />} />
+        {/* <Route path="/form" element={<PageWrapper title="Form" content={<Form />} />} /> */}
         <Route path="*" element={<Navigate to="/notfound" replace />} />
       </Routes>
       <Footer />

@@ -19,7 +19,7 @@ export function Search() {
       <input
         {...register('inputSearch')}
         className="header-input"
-        placeholder="Search for ..."
+        placeholder="Показать фотографии по тегу ..."
         type="search"
         defaultValue={inputRedux}
       ></input>
