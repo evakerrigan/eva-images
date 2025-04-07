@@ -53,7 +53,7 @@ export function Form() {
     <div className="wrapper">
       <form onSubmit={handleSubmit(onSubmit)} className="input-form">
         <fieldset className="input-fieldset">
-          <legend className="input-legend-title">Form for your:</legend>
+          <legend className="input-legend-title">Форма для отправки:</legend>
           <input
             type="file"
             {...register('inputFile', {

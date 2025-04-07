@@ -4,7 +4,7 @@ import './AboutMe.scss';
 export function AboutMe() {
   return (
     <div className="wrapper">
-      <h2 className="about-title">AboutMe</h2>
+      <h2 className="about-title">Обо мне</h2>
       <div className="about-wrapper">
         <div className="about-photo-wrapper">
           <div className="about-photo"></div>
@@ -12,7 +12,7 @@ export function AboutMe() {
         <div className="about-text">
           <p className="about-paragraph">Привет !</p>
           <p className="about-paragraph">
-            Я успешный фотограф, специализирующийся на лайфстайл съемках. Мои работы высоко
+            Меня зовут Ксения. Я успешный фотограф, специализирующийся на лайфстайл съемках. Мои работы высоко
             оцениваются клиентами и используются в рекламных кампаниях. Я являюсь одним из тех
             людей, которые умеют создавать на фотографиях атмосферу, и она заставляет зрителей
             остановиться и задуматься.
@@ -41,7 +41,7 @@ export function AboutMe() {
             интерьера или вашей рекламы.
           </p>
           <p className="about-paragraph">
-            Write to me for any questions:{' '}
+            Вы можете написать мне по любым вопросам:{' '}
             <a
               href="https://t.me/EvaKerrigan"
               target="_blank"

@@ -17,7 +17,7 @@ export function Home() {
 
   return (
     <div className="wrapper">
-      <h2>Home</h2>
+      <h2>Главная</h2>
       <ul className="card-list">
         {dataCardsRedux?.map((card: CardDto) => (
           <li className="card-item" key={card.id}>
