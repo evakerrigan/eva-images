@@ -8,11 +8,13 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint ./src --ext .ts,.tsx",
-    "test": "jest --coverage --collectCoverageFrom='src/**/!(main).{ts,tsx}'"
+    "test": "jest --coverage --collectCoverageFrom='src/**/!(main).{ts,tsx}'",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/user-event": "^14.4.3",
+    "gh-pages": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
